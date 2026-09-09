@@ -2,31 +2,23 @@ import {
   siReact,
   siTypescript,
   siJavascript,
-  siNodedotjs,
-  siExpo,
-  siVite,
-  siTailwindcss,
-  siPostgresql,
-  siSocketdotio,
-  siFigma,
-  siGit,
   siSwift,
+  siGit,
+  siFirebase,
+  siNodedotjs,
   type SimpleIcon,
 } from "simple-icons";
 
-const TECHS: SimpleIcon[] = [
-  siReact,
-  siTypescript,
-  siJavascript,
-  siNodedotjs,
-  siExpo,
-  siVite,
-  siTailwindcss,
-  siPostgresql,
-  siSocketdotio,
-  siFigma,
-  siGit,
-  siSwift,
+// { icone, rotulo } — o rotulo permite "React Native" reaproveitando o icone do React.
+const TECHS: { icon: SimpleIcon; label: string }[] = [
+  { icon: siReact, label: "React" },
+  { icon: siTypescript, label: "TypeScript" },
+  { icon: siJavascript, label: "JavaScript" },
+  { icon: siNodedotjs, label: "Node.js" },
+  { icon: siFirebase, label: "Firebase" },
+  { icon: siReact, label: "React Native" },
+  { icon: siSwift, label: "Swift" },
+  { icon: siGit, label: "Git" },
 ];
 
 function Row({ hidden = false }: { hidden?: boolean }) {
@@ -35,18 +27,18 @@ function Row({ hidden = false }: { hidden?: boolean }) {
       className="flex shrink-0 items-center gap-12 pr-12"
       aria-hidden={hidden || undefined}
     >
-      {TECHS.map((t) => (
-        <span key={t.slug} className="flex items-center gap-2 text-muted">
+      {TECHS.map(({ icon, label }) => (
+        <span key={label} className="flex items-center gap-2 text-muted">
           <svg
             viewBox="0 0 24 24"
             className="h-3.5 w-3.5 fill-current"
             role="img"
-            aria-label={t.title}
+            aria-label={label}
           >
-            <path d={t.path} />
+            <path d={icon.path} />
           </svg>
           <span className="font-mono text-[10px] uppercase tracking-[0.22em]">
-            {t.title}
+            {label}
           </span>
         </span>
       ))}

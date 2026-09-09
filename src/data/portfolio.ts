@@ -77,10 +77,10 @@ export const projects: Project[] = [
 ];
 
 export const skills = [
-  { group: "Mobile", items: ["React Native", "Expo", "Swift (basico)"] },
-  { group: "Web", items: ["React", "TypeScript", "Vite", "Tailwind"] },
-  { group: "Back-end", items: ["Node.js", "REST", "PostgreSQL"] },
-  { group: "Ferramentas", items: ["Git", "CI/CD", "Figma"] },
+  { group: "Mobile", items: ["React Native", "Swift"] },
+  { group: "Web", items: ["React", "TypeScript", "JavaScript"] },
+  { group: "Back-end", items: ["Node.js", "Firebase"] },
+  { group: "Ferramentas", items: ["Git"] },
 ];
 
 export type Job = {
