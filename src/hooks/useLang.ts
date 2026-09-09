@@ -8,7 +8,7 @@ function read(): Lang {
     const attr = document.documentElement.getAttribute("data-lang");
     if (attr === "pt" || attr === "en") return attr;
   }
-  return "en";
+  return "pt";
 }
 
 let currentLang: Lang = read();
@@ -51,7 +51,7 @@ export function useLang(): { lang: Lang; t: Dict; toggle: () => void } {
   const lang = useSyncExternalStore(
     subscribe,
     () => currentLang,
-    () => "en" as Lang
+    () => "pt" as Lang
   );
   return {
     lang,
