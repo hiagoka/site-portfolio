@@ -1,5 +1,5 @@
-import { profile } from "../data/portfolio";
-import { useLang } from "../hooks/useLang";
+import { profile } from "@/data/site";
+import { useLang } from "@/hooks/useLang";
 
 export function Hero() {
   const { t } = useLang();
@@ -8,7 +8,7 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="mx-auto grid min-h-[68vh] max-w-content items-center gap-10 px-6 py-12 md:min-h-[82vh] md:gap-12 md:py-16 md:grid-cols-[1.15fr_0.85fr]"
+      className="mx-auto grid min-h-[68vh] max-w-content items-center gap-10 px-6 py-12 md:min-h-[82vh] md:grid-cols-[1.15fr_0.85fr] md:gap-12 md:py-16"
     >
       <div>
         <p className="font-mono text-[11px] uppercase tracking-[0.24em] text-muted">

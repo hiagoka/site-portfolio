@@ -1,11 +1,5 @@
-import { Frame } from "./components/Frame";
-import { Ticker } from "./components/Ticker";
-import { Header } from "./components/Header";
-import { Hero } from "./components/Hero";
-import { Projects } from "./components/Projects";
-import { About } from "./components/About";
-import { Experience } from "./components/Experience";
-import { Contact } from "./components/Contact";
+import { Frame, Header, Ticker } from "@/components/layout";
+import { About, Contact, Experience, Hero, Projects } from "@/components/sections";
 
 export default function App() {
   return (

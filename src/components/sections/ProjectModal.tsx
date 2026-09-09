@@ -1,13 +1,12 @@
 import { useEffect, useRef } from "react";
-import { projects } from "../data/portfolio";
-import { useLang } from "../hooks/useLang";
-import { Leader } from "./Leader";
+import { CropMarks, Leader } from "@/components/ui";
+import { projects } from "@/data/site";
+import { useLang } from "@/hooks/useLang";
 import { ProjectMedia } from "./ProjectMedia";
 
-type Props = {
-  index: number | null;
-  onClose: () => void;
-};
+type Props = { index: number | null; onClose: () => void };
+
+const code = (i: number) => `PRJ-${String(i + 1).padStart(2, "0")}`;
 
 export function ProjectModal({ index, onClose }: Props) {
   const { t } = useLang();
@@ -16,18 +15,13 @@ export function ProjectModal({ index, onClose }: Props) {
 
   useEffect(() => {
     if (!isOpen) return;
-
-    const prevOverflow = document.body.style.overflow;
+    const prev = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     closeRef.current?.focus();
-
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose();
-    };
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && onClose();
     window.addEventListener("keydown", onKey);
-
     return () => {
-      document.body.style.overflow = prevOverflow;
+      document.body.style.overflow = prev;
       window.removeEventListener("keydown", onKey);
     };
   }, [isOpen, onClose]);
@@ -37,14 +31,11 @@ export function ProjectModal({ index, onClose }: Props) {
   const project = projects[index];
   const text = t.projects[index];
   const external = Boolean(project.url && project.url !== "#");
-  const code = `PRJ-${String(index + 1).padStart(2, "0")}`;
 
   return (
     <div
       className="modal-backdrop fixed inset-0 z-50 flex items-start justify-center overflow-y-auto p-3 sm:items-center sm:p-8"
-      onMouseDown={(e) => {
-        if (e.target === e.currentTarget) onClose();
-      }}
+      onMouseDown={(e) => e.target === e.currentTarget && onClose()}
     >
       <div
         role="dialog"
@@ -52,14 +43,11 @@ export function ProjectModal({ index, onClose }: Props) {
         aria-label={text.title}
         className="modal-panel relative my-auto w-full max-w-3xl border border-line bg-bg"
       >
-        <span className="modal-crop modal-crop--tl" />
-        <span className="modal-crop modal-crop--tr" />
-        <span className="modal-crop modal-crop--bl" />
-        <span className="modal-crop modal-crop--br" />
+        <CropMarks />
 
         <header className="flex items-baseline justify-between gap-3 border-b border-line px-4 py-3 sm:px-6 sm:py-4">
           <div className="flex items-baseline gap-2 sm:gap-3">
-            <span className="font-mono text-[11px] text-hot">{code}</span>
+            <span className="font-mono text-[11px] text-hot">{code(index)}</span>
             <h3 className="font-serif text-xl tracking-tight sm:text-2xl">
               {text.title}
             </h3>

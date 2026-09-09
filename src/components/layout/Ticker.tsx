@@ -1,5 +1,6 @@
-import { techs } from "../data/tech";
-import { useLang } from "../hooks/useLang";
+import { TechIcon } from "@/components/ui";
+import { techs } from "@/data/tech";
+import { useLang } from "@/hooks/useLang";
 
 function Row({ hidden = false }: { hidden?: boolean }) {
   return (
@@ -9,14 +10,7 @@ function Row({ hidden = false }: { hidden?: boolean }) {
     >
       {techs.map(({ icon, label }) => (
         <span key={label} className="flex items-center gap-2 text-muted">
-          <svg
-            viewBox="0 0 24 24"
-            className="h-3.5 w-3.5 fill-current"
-            role="img"
-            aria-label={label}
-          >
-            <path d={icon.path} />
-          </svg>
+          <TechIcon icon={icon} label={label} />
           <span className="font-mono text-[10px] uppercase tracking-[0.22em]">
             {label}
           </span>
@@ -26,15 +20,12 @@ function Row({ hidden = false }: { hidden?: boolean }) {
   );
 }
 
+/** Faixa rolante com os logos das tecnologias. */
 export function Ticker() {
   const { t } = useLang();
   return (
     <div className="overflow-hidden border-b border-line py-2.5">
-      <div
-        className="marquee ticker-mask"
-        role="marquee"
-        aria-label={t.ui.techAria}
-      >
+      <div className="marquee ticker-mask" role="marquee" aria-label={t.ui.techAria}>
         <Row />
         <Row hidden />
       </div>

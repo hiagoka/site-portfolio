@@ -1,6 +1,8 @@
 import { useEffect } from "react";
-import { useLang } from "../hooks/useLang";
+import { CropMarks } from "@/components/ui";
+import { useLang } from "@/hooks/useLang";
 
+/** Mantem --sp (0-100%) com o progresso do scroll. */
 function useScrollProgressVar() {
   useEffect(() => {
     const update = () => {
@@ -18,7 +20,7 @@ function useScrollProgressVar() {
   }, []);
 }
 
-/** Moldura fixa com marcas de corte + barra de progresso do scroll. */
+/** Moldura fixa com marcas de corte, marcas de meio e barra de progresso. */
 export function Frame() {
   useScrollProgressVar();
   const { t } = useLang();
@@ -26,10 +28,7 @@ export function Frame() {
   return (
     <div className="frame" aria-hidden>
       <span className="frame-progress" />
-      <span className="frame-corner frame-corner--tl" />
-      <span className="frame-corner frame-corner--tr" />
-      <span className="frame-corner frame-corner--bl" />
-      <span className="frame-corner frame-corner--br" />
+      <CropMarks lg />
       <span className="frame-tick frame-tick--t" />
       <span className="frame-tick frame-tick--b" />
       <span className="frame-tick frame-tick--l" />

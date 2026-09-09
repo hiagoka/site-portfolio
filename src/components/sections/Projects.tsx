@@ -1,21 +1,15 @@
 import { useState } from "react";
-import { projects } from "../data/portfolio";
-import { useLang } from "../hooks/useLang";
-import { Leader } from "./Leader";
+import { Leader, Section } from "@/components/ui";
+import { projects } from "@/data/site";
+import { useLang } from "@/hooks/useLang";
 import { ProjectModal } from "./ProjectModal";
-import { Section } from "./Section";
 
 export function Projects() {
   const { t } = useLang();
   const [open, setOpen] = useState<number | null>(null);
 
   return (
-    <Section
-      id="projetos"
-      index={1}
-      title={t.nav.projetos}
-      note={t.ui.records(projects.length)}
-    >
+    <Section id="projetos" note={t.ui.records(projects.length)}>
       <ul className="border-t border-line">
         {projects.map((p, i) => (
           <li key={i} className="border-b border-line">
@@ -60,10 +54,7 @@ export function Projects() {
         ))}
       </ul>
 
-      <ProjectModal
-        index={open}
-        onClose={() => setOpen(null)}
-      />
+      <ProjectModal index={open} onClose={() => setOpen(null)} />
     </Section>
   );
 }

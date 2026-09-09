@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 
+/** Linha "CHAVE ........ valor" (pontilhado) — motivo de layout da ficha. */
 export function Leader({ k, children }: { k: string; children: ReactNode }) {
   return (
     <div className="leader">

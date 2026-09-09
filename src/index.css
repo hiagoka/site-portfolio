@@ -112,31 +112,36 @@ section[id] {
   border: 1px solid var(--border);
   pointer-events: none;
 }
-.frame-corner {
+/* marcas de corte reutilizaveis (moldura + modal) */
+.crop {
   position: absolute;
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
   border: 0 solid var(--hot);
 }
-.frame-corner--tl {
+.crop--lg {
+  width: 12px;
+  height: 12px;
+}
+.crop--tl {
   top: -1px;
   left: -1px;
   border-top-width: 2px;
   border-left-width: 2px;
 }
-.frame-corner--tr {
+.crop--tr {
   top: -1px;
   right: -1px;
   border-top-width: 2px;
   border-right-width: 2px;
 }
-.frame-corner--bl {
+.crop--bl {
   bottom: -1px;
   left: -1px;
   border-bottom-width: 2px;
   border-left-width: 2px;
 }
-.frame-corner--br {
+.crop--br {
   bottom: -1px;
   right: -1px;
   border-bottom-width: 2px;
@@ -274,37 +279,6 @@ section[id] {
   animation: modal-pop 0.22s cubic-bezier(0.2, 0.7, 0.2, 1);
   box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.6);
 }
-.modal-crop {
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  border: 0 solid var(--hot);
-}
-.modal-crop--tl {
-  top: -1px;
-  left: -1px;
-  border-top-width: 2px;
-  border-left-width: 2px;
-}
-.modal-crop--tr {
-  top: -1px;
-  right: -1px;
-  border-top-width: 2px;
-  border-right-width: 2px;
-}
-.modal-crop--bl {
-  bottom: -1px;
-  left: -1px;
-  border-bottom-width: 2px;
-  border-left-width: 2px;
-}
-.modal-crop--br {
-  bottom: -1px;
-  right: -1px;
-  border-bottom-width: 2px;
-  border-right-width: 2px;
-}
-
 /* cursor piscando */
 @keyframes blink {
   50% {

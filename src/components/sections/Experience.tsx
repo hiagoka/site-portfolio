@@ -1,11 +1,11 @@
-import { useLang } from "../hooks/useLang";
-import { Section } from "./Section";
+import { Section } from "@/components/ui";
+import { useLang } from "@/hooks/useLang";
 
 export function Experience() {
   const { t } = useLang();
 
   return (
-    <Section id="experiencia" index={3} title={t.nav.experiencia}>
+    <Section id="experiencia">
       <ul className="border-t border-line">
         {t.experience.map((job) => (
           <li

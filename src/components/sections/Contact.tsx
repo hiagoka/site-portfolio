@@ -1,6 +1,6 @@
-import { profile } from "../data/portfolio";
-import { useLang } from "../hooks/useLang";
-import { Section } from "./Section";
+import { Leader, Section } from "@/components/ui";
+import { profile } from "@/data/site";
+import { useLang } from "@/hooks/useLang";
 
 export function Contact() {
   const { t } = useLang();
@@ -8,12 +8,7 @@ export function Contact() {
 
   return (
     <>
-      <Section
-        id="contato"
-        index={4}
-        title={t.nav.contato}
-        note={t.ui.endOfSheet}
-      >
+      <Section id="contato" note={t.ui.endOfSheet}>
         <div className="grid gap-12 md:grid-cols-[1.3fr_1fr] md:gap-16">
           <p className="font-serif text-[clamp(2.2rem,6vw,3.5rem)] leading-[1.05]">
             {a} <span className="italic">{b}</span>
@@ -21,30 +16,22 @@ export function Contact() {
           </p>
 
           <div className="border-t border-line pt-4">
-            <div className="leader">
-              <span className="leader__k">Email</span>
-              <span className="leader__d" />
-              <span className="leader__v">
-                <a href={`mailto:${profile.email}`} className="hover:text-hot">
-                  {profile.email}
-                </a>
-              </span>
-            </div>
+            <Leader k="Email">
+              <a href={`mailto:${profile.email}`} className="hover:text-hot">
+                {profile.email}
+              </a>
+            </Leader>
             {profile.socials.map((s) => (
-              <div className="leader" key={s.label}>
-                <span className="leader__k">{s.label}</span>
-                <span className="leader__d" />
-                <span className="leader__v">
-                  <a
-                    href={s.url}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="hover:text-hot"
-                  >
-                    {s.url.replace(/^https?:\/\//, "")}
-                  </a>
-                </span>
-              </div>
+              <Leader key={s.label} k={s.label}>
+                <a
+                  href={s.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hover:text-hot"
+                >
+                  {s.url.replace(/^https?:\/\//, "")}
+                </a>
+              </Leader>
             ))}
           </div>
         </div>
