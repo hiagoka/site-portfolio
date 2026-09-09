@@ -5,6 +5,9 @@ export const profile = {
   role: "Desenvolvedor Mobile & Web",
   location: "Brasil",
   available: true,
+  // Coloque aqui a URL ou o import da sua foto (ex: import foto from "../assets/foto.jpg").
+  // Vazio => mostra um placeholder.
+  photo: "",
   intro:
     "Construo aplicativos e interfaces com foco em clareza, performance e um codigo que o proximo dev entende. Atualmente na frente mobile do Prepara+.",
   email: "hiagokalil@hotmail.com",
