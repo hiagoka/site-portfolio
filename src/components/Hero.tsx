@@ -8,7 +8,7 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="mx-auto grid min-h-[82vh] max-w-content items-center gap-12 px-6 py-16 md:grid-cols-[1.15fr_0.85fr]"
+      className="mx-auto grid min-h-[68vh] max-w-content items-center gap-10 px-6 py-12 md:min-h-[82vh] md:gap-12 md:py-16 md:grid-cols-[1.15fr_0.85fr]"
     >
       <div>
         <p className="font-mono text-[11px] uppercase tracking-[0.24em] text-muted">
@@ -42,7 +42,7 @@ export function Hero() {
         </a>
       </div>
 
-      <figure className="mx-auto w-full max-w-[20rem] md:mx-0 md:ml-auto">
+      <figure className="mx-auto w-full max-w-[15rem] sm:max-w-[20rem] md:mx-0 md:ml-auto">
         <div className="relative aspect-[4/5] border border-line bg-bg-subtle">
           {profile.photo ? (
             <img

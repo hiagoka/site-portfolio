@@ -54,6 +54,15 @@ body {
   font-family: "Instrument Sans", system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 /* grao */
@@ -74,6 +83,11 @@ body::after {
 
 section[id] {
   scroll-margin-top: 4.5rem;
+}
+@media (max-width: 768px) {
+  section[id] {
+    scroll-margin-top: 7rem;
+  }
 }
 
 ::selection {
@@ -349,6 +363,29 @@ section[id] {
 }
 .spec-row:hover {
   background: color-mix(in oklab, var(--fg) 4%, transparent);
+}
+
+/* ---------- mobile ---------- */
+@media (max-width: 640px) {
+  .frame-label {
+    display: none;
+  }
+  .leader {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    line-height: 1.75;
+  }
+  .leader__d {
+    display: none;
+  }
+  .leader__k {
+    font-size: 0.6875rem;
+  }
+  .leader__v {
+    text-align: left;
+    color: var(--fg);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

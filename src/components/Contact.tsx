@@ -50,7 +50,7 @@ export function Contact() {
         </div>
 
         <a href={`mailto:${profile.email}`} className="btn-block mt-10">
-          {profile.email} <span aria-hidden>&rarr;</span>
+          {t.ui.getInTouch} <span aria-hidden>&rarr;</span>
         </a>
       </Section>
 

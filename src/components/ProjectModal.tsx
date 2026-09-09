@@ -41,7 +41,7 @@ export function ProjectModal({ index, onClose }: Props) {
 
   return (
     <div
-      className="modal-backdrop fixed inset-0 z-50 flex items-start justify-center overflow-y-auto p-4 sm:items-center sm:p-8"
+      className="modal-backdrop fixed inset-0 z-50 flex items-start justify-center overflow-y-auto p-3 sm:items-center sm:p-8"
       onMouseDown={(e) => {
         if (e.target === e.currentTarget) onClose();
       }}
@@ -50,30 +50,32 @@ export function ProjectModal({ index, onClose }: Props) {
         role="dialog"
         aria-modal="true"
         aria-label={text.title}
-        className="modal-panel relative w-full max-w-3xl border border-line bg-bg"
+        className="modal-panel relative my-auto w-full max-w-3xl border border-line bg-bg"
       >
         <span className="modal-crop modal-crop--tl" />
         <span className="modal-crop modal-crop--tr" />
         <span className="modal-crop modal-crop--bl" />
         <span className="modal-crop modal-crop--br" />
 
-        <header className="flex items-baseline justify-between gap-4 border-b border-line px-6 py-4">
-          <div className="flex items-baseline gap-3">
+        <header className="flex items-baseline justify-between gap-3 border-b border-line px-4 py-3 sm:px-6 sm:py-4">
+          <div className="flex items-baseline gap-2 sm:gap-3">
             <span className="font-mono text-[11px] text-hot">{code}</span>
-            <h3 className="font-serif text-2xl tracking-tight">{text.title}</h3>
+            <h3 className="font-serif text-xl tracking-tight sm:text-2xl">
+              {text.title}
+            </h3>
           </div>
           <button
             ref={closeRef}
             type="button"
             onClick={onClose}
             aria-label={t.ui.close}
-            className="font-mono text-xs uppercase tracking-[0.16em] text-muted transition hover:text-hot"
+            className="shrink-0 font-mono text-xs uppercase tracking-[0.16em] text-muted transition hover:text-hot"
           >
             {t.ui.close} &times;
           </button>
         </header>
 
-        <div className="space-y-6 p-6">
+        <div className="space-y-6 p-4 sm:p-6">
           <ProjectMedia
             video={project.video}
             image={project.image}

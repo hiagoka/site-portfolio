@@ -13,10 +13,10 @@ export function Section({ id, index, title, note, children }: Props) {
 
   return (
     <section id={id} className="border-t border-line">
-      <div className="mx-auto max-w-content px-6 py-16 sm:py-24">
-        <header className="mb-12 flex flex-wrap items-baseline gap-x-4 gap-y-1">
+      <div className="mx-auto max-w-content px-6 py-14 sm:py-24">
+        <header className="mb-9 flex flex-wrap items-baseline gap-x-4 gap-y-1 sm:mb-12">
           <span className="box-num text-xs">{num}</span>
-          <h2 className="font-serif text-3xl tracking-tight sm:text-4xl">
+          <h2 className="font-serif text-[1.7rem] tracking-tight sm:text-4xl">
             {title}
           </h2>
           <span className="ml-auto font-mono text-[10px] uppercase tracking-[0.2em] text-muted">
