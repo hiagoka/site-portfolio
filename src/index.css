@@ -2,40 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --bg: #0b0a09;
-  --bg-subtle: #141210;
-  --fg: #e9e4d8;
-  --muted: #817d72;
-  --border: #2c2a25;
-  --led: #57d368;
-  --hot: #ff4326;
-  color-scheme: dark;
-}
-
-:root[data-theme="light"] {
-  --bg: #ece7db;
-  --bg-subtle: #e1dbc9;
-  --fg: #1a1712;
-  --muted: #6a6458;
-  --border: #cec6b1;
-  --led: #2e9e3f;
-  --hot: #d1381d;
-  color-scheme: light;
-}
-
-@media (prefers-color-scheme: light) {
-  :root:not([data-theme="dark"]) {
-    --bg: #ece7db;
-    --bg-subtle: #e1dbc9;
-    --fg: #1a1712;
-    --muted: #6a6458;
-    --border: #cec6b1;
-    --led: #2e9e3f;
-    --hot: #d1381d;
-    color-scheme: light;
-  }
-}
+/* cores e fontes (--bg, --fg, --font-mono, ...) vem de src/theme.ts
+   via "virtual:theme.css" (importado no main.tsx). */
 
 *,
 *::before,
@@ -51,7 +19,7 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--fg);
-  font-family: "Instrument Sans", system-ui, sans-serif;
+  font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
@@ -178,7 +146,7 @@ section[id] {
 .frame-label {
   position: absolute;
   bottom: 6px;
-  font-family: "JetBrains Mono", monospace;
+  font-family: var(--font-mono);
   font-size: 9px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -198,7 +166,7 @@ section[id] {
   display: flex;
   align-items: baseline;
   gap: 0.5rem;
-  font-family: "JetBrains Mono", monospace;
+  font-family: var(--font-mono);
   font-size: 0.8125rem;
   line-height: 1.9;
 }
@@ -225,7 +193,7 @@ section[id] {
   background: var(--fg);
   color: var(--bg);
   padding: 0.08em 0.5em;
-  font-family: "JetBrains Mono", monospace;
+  font-family: var(--font-mono);
   letter-spacing: 0.1em;
 }
 .btn-block {
@@ -235,7 +203,7 @@ section[id] {
   background: var(--fg);
   color: var(--bg);
   padding: 0.75rem 1.25rem;
-  font-family: "JetBrains Mono", monospace;
+  font-family: var(--font-mono);
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.16em;
