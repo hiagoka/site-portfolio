@@ -1,3 +1,4 @@
+import { InstrumentRail } from "./components/InstrumentRail";
 import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
 import { Projects } from "./components/Projects";
@@ -7,9 +8,10 @@ import { Contact } from "./components/Contact";
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-bg text-fg">
+    <div className="min-h-screen text-fg">
+      <InstrumentRail />
       <Header />
-      <main>
+      <main className="lg:pl-11">
         <Hero />
         <Projects />
         <About />

@@ -14,13 +14,16 @@ export function About() {
 
         <div className="space-y-6">
           {skills.map((g) => (
-            <div key={g.group}>
-              <h3 className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted">
+            <div key={g.group} className="border-t border-line pt-3">
+              <h3 className="font-mono text-[11px] uppercase tracking-[0.18em] text-accent">
                 {g.group}
               </h3>
-              <ul className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-sm">
+              <ul className="mt-2 space-y-1 font-mono text-sm text-muted">
                 {g.items.map((i) => (
-                  <li key={i}>{i}</li>
+                  <li key={i}>
+                    <span className="mr-2 text-accent">&mdash;</span>
+                    {i}
+                  </li>
                 ))}
               </ul>
             </div>

@@ -1,31 +1,36 @@
 import { motion } from "framer-motion";
 import { profile } from "../data/portfolio";
+import { useClock } from "../hooks/useClock";
 
 const rise = {
-  initial: { opacity: 0, y: 16 },
+  initial: { opacity: 0, y: 18 },
   animate: { opacity: 1, y: 0 },
 };
 
 export function Hero() {
+  const time = useClock();
+
   return (
     <section
       id="top"
-      className="mx-auto flex min-h-[82vh] max-w-content flex-col justify-center px-6 pb-16 pt-16"
+      className="mx-auto flex min-h-[88vh] max-w-content flex-col justify-center px-6 pb-16 pt-20"
     >
-      <motion.p
+      <motion.div
         {...rise}
         transition={{ duration: 0.5 }}
-        className="font-mono text-[11px] uppercase tracking-[0.28em] text-muted"
+        className="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.25em] text-muted"
       >
+        <span className="text-accent">&#47;&#47;</span>
         {profile.role}
-      </motion.p>
+      </motion.div>
 
       <motion.h1
         {...rise}
         transition={{ duration: 0.55, delay: 0.05 }}
-        className="mt-5 text-5xl font-semibold leading-[1.03] tracking-tight sm:text-7xl"
+        className="mt-6 text-[clamp(2.8rem,10vw,6.5rem)] font-semibold leading-[0.98] tracking-[-0.03em]"
       >
         {profile.name}
+        <span className="text-accent">.</span>
       </motion.h1>
 
       <motion.p
@@ -40,26 +45,26 @@ export function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.3, duration: 0.6 }}
-        className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-3 font-mono text-sm"
+        className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-4"
       >
-        <a href="#contato" className="group inline-flex items-center gap-2 text-fg">
-          <span className="border-b border-fg/30 pb-0.5 transition group-hover:border-accent">
-            Entrar em contato
-          </span>
-          <span aria-hidden className="text-accent transition group-hover:translate-x-1">
-            &rarr;
-          </span>
+        <a
+          href="#contato"
+          className="btn-line inline-flex items-center gap-2 px-5 py-2.5 font-mono text-xs uppercase tracking-[0.15em]"
+        >
+          Entrar em contato
+          <span aria-hidden>&rarr;</span>
         </a>
 
-        {profile.available && (
-          <span className="inline-flex items-center gap-2 text-muted">
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
-            </span>
-            Disponivel para projetos
-          </span>
-        )}
+        <span className="font-mono text-xs text-muted">
+          {profile.location} &middot; {time} local
+          {profile.available && (
+            <>
+              {" "}
+              &middot;{" "}
+              <span className="text-accent">disponivel</span>
+            </>
+          )}
+        </span>
       </motion.div>
     </section>
   );

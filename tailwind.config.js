@@ -12,11 +12,11 @@ export default {
         accent: "var(--accent)",
       },
       fontFamily: {
-        sans: ['"Inter"', "system-ui", "sans-serif"],
+        sans: ['"Space Grotesk"', "system-ui", "sans-serif"],
         mono: ['"JetBrains Mono"', "ui-monospace", "SFMono-Regular", "monospace"],
       },
       maxWidth: {
-        content: "62rem",
+        content: "64rem",
       },
     },
   },

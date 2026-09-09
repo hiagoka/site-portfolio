@@ -6,31 +6,29 @@ export function Contact() {
     <>
       <Section id="contato" index={4} title="Contato">
         <div className="max-w-2xl">
-          <p className="text-3xl font-semibold leading-tight tracking-tight sm:text-4xl">
-            Vamos construir algo?
+          <p className="text-[clamp(2rem,6vw,3.25rem)] font-semibold leading-[1.05] tracking-[-0.02em]">
+            Vamos construir algo
+            <span className="text-accent">?</span>
           </p>
 
           <a
             href={`mailto:${profile.email}`}
-            className="group mt-6 inline-flex items-center gap-2 text-lg"
+            className="btn-line mt-8 inline-flex items-center gap-2 px-5 py-3 font-mono text-xs uppercase tracking-[0.15em]"
           >
-            <span className="border-b border-fg/30 pb-1 transition group-hover:border-accent">
-              {profile.email}
-            </span>
-            <span aria-hidden className="text-accent transition group-hover:translate-x-1">
-              &rarr;
-            </span>
+            {profile.email}
+            <span aria-hidden>&rarr;</span>
           </a>
 
-          <div className="mt-8 flex gap-6 font-mono text-[11px] uppercase tracking-[0.18em] text-muted">
+          <div className="mt-10 flex flex-wrap gap-x-8 gap-y-2 font-mono text-[11px] uppercase tracking-[0.16em] text-muted">
             {profile.socials.map((s) => (
               <a
                 key={s.label}
                 href={s.url}
                 target="_blank"
                 rel="noreferrer"
-                className="transition hover:text-fg"
+                className="group inline-flex items-center gap-2 transition hover:text-fg"
               >
+                <span className="text-accent">&rarr;</span>
                 {s.label}
               </a>
             ))}
@@ -41,10 +39,10 @@ export function Contact() {
       <footer className="border-t border-line">
         <div className="mx-auto flex max-w-content items-center justify-between px-6 py-8 font-mono text-[11px] text-muted">
           <span>
-            &copy; {new Date().getFullYear()} {profile.name}
+            {profile.name} &mdash; {new Date().getFullYear()}
           </span>
-          <a href="#top" className="transition hover:text-fg">
-            Voltar ao topo &uarr;
+          <a href="#top" className="transition hover:text-accent">
+            topo &uarr;
           </a>
         </div>
       </footer>

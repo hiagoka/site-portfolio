@@ -4,13 +4,13 @@ import { Section } from "./Section";
 export function Experience() {
   return (
     <Section id="experiencia" index={3} title="Experiencia">
-      <ul className="space-y-10">
+      <ul>
         {experience.map((job) => (
           <li
             key={job.period + job.company}
-            className="grid gap-2 sm:grid-cols-[11rem_1fr] sm:gap-10"
+            className="row-hover grid gap-2 border-b border-line py-7 first:border-t sm:grid-cols-[11rem_1fr] sm:gap-8"
           >
-            <span className="font-mono text-[11px] text-muted sm:pt-1.5">
+            <span className="font-mono text-[11px] uppercase tracking-wide text-accent sm:pt-1.5">
               {job.period}
             </span>
             <div>
