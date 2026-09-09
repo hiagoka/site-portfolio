@@ -1,26 +1,5 @@
-import {
-  siReact,
-  siTypescript,
-  siJavascript,
-  siSwift,
-  siGit,
-  siFirebase,
-  siNodedotjs,
-  type SimpleIcon,
-} from "simple-icons";
+import { techs } from "../data/tech";
 import { useLang } from "../hooks/useLang";
-
-// { icone, rotulo } — o rotulo permite "React Native" reaproveitando o icone do React.
-const TECHS: { icon: SimpleIcon; label: string }[] = [
-  { icon: siReact, label: "React" },
-  { icon: siTypescript, label: "TypeScript" },
-  { icon: siJavascript, label: "JavaScript" },
-  { icon: siNodedotjs, label: "Node.js" },
-  { icon: siFirebase, label: "Firebase" },
-  { icon: siReact, label: "React Native" },
-  { icon: siSwift, label: "Swift" },
-  { icon: siGit, label: "Git" },
-];
 
 function Row({ hidden = false }: { hidden?: boolean }) {
   return (
@@ -28,7 +7,7 @@ function Row({ hidden = false }: { hidden?: boolean }) {
       className="flex shrink-0 items-center gap-12 pr-12"
       aria-hidden={hidden || undefined}
     >
-      {TECHS.map(({ icon, label }) => (
+      {techs.map(({ icon, label }) => (
         <span key={label} className="flex items-center gap-2 text-muted">
           <svg
             viewBox="0 0 24 24"

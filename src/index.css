@@ -332,6 +332,35 @@ section[id] {
     transform: translateX(-50%);
   }
 }
+
+/* ---------- mostrador circular de tecnologias ---------- */
+@keyframes dial-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.tech-dial__ring {
+  animation: dial-spin 48s linear infinite;
+}
+.tech-dial__item {
+  animation: dial-spin 48s linear infinite reverse;
+}
+.tech-dial__sweep {
+  background: conic-gradient(
+    from 0deg,
+    color-mix(in oklab, var(--hot) 20%, transparent),
+    transparent 26%
+  );
+  opacity: 0.55;
+  -webkit-mask: radial-gradient(circle, transparent 17%, #000 18%, #000 49%, transparent 50%);
+  mask: radial-gradient(circle, transparent 17%, #000 18%, #000 49%, transparent 50%);
+  animation: dial-spin 9s linear infinite;
+}
+.tech-dial:hover .tech-dial__ring,
+.tech-dial:hover .tech-dial__item,
+.tech-dial:hover .tech-dial__sweep {
+  animation-play-state: paused;
+}
 .marquee {
   display: inline-flex;
   white-space: nowrap;
@@ -393,7 +422,10 @@ section[id] {
     scroll-behavior: auto;
   }
   .marquee,
-  .cursor {
+  .cursor,
+  .tech-dial__ring,
+  .tech-dial__item,
+  .tech-dial__sweep {
     animation: none;
   }
   *,
