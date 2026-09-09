@@ -23,6 +23,13 @@ export type Project = {
   description: string;
   stack: string[];
   url?: string;
+  // Midia do card que abre ao clicar. Preencha um dos dois:
+  //   video: link do YouTube / Loom / Vimeo, ou URL de um .mp4
+  //   image: URL ou import de uma imagem
+  video?: string;
+  image?: string;
+  // Texto mais longo, opcional, mostrado no card.
+  detail?: string;
 };
 
 export const projects: Project[] = [
@@ -33,6 +40,9 @@ export const projects: Project[] = [
       "App de estudos com trilhas, simulados e acompanhamento de progresso do aluno.",
     stack: ["React Native", "TypeScript", "Expo"],
     url: "#",
+    video: "",
+    image: "",
+    detail: "",
   },
   {
     title: "Chat em tempo real",
@@ -41,6 +51,8 @@ export const projects: Project[] = [
       "Mensagens com salas, presenca, fila offline e reconciliacao de estado ao reconectar.",
     stack: ["React Native", "Socket.IO", "Node"],
     url: "#",
+    video: "",
+    image: "",
   },
   {
     title: "Dashboard de metricas",
@@ -49,6 +61,8 @@ export const projects: Project[] = [
       "Painel para acompanhar entregas e squads, com filtros salvos e exportacao.",
     stack: ["React", "Vite", "Recharts"],
     url: "#",
+    video: "",
+    image: "",
   },
   {
     title: "Auditor de prontidao iOS",
@@ -57,6 +71,8 @@ export const projects: Project[] = [
       "CLI com agentes de IA que revisam metadados e assets de um app antes da submissao a App Store.",
     stack: ["Node", "TypeScript", "LLM"],
     url: "#",
+    video: "",
+    image: "",
   },
 ];
 
