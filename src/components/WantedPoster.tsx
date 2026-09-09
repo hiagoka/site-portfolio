@@ -17,8 +17,8 @@ function useCountUp(target: number, run: boolean) {
   return value;
 }
 
-// Serifa "de maquina de escrever" para casar com o pôster impresso
-const posterSerif = '"Times New Roman", Times, Georgia, serif';
+// Caixa-alta romana, no espirito de "DEAD OR ALIVE" / "MARINE" do pôster
+const posterName = '"Cinzel", "Times New Roman", Georgia, serif';
 
 export function WantedPoster() {
   const ref = useRef<HTMLDivElement>(null);
@@ -72,27 +72,36 @@ export function WantedPoster() {
               )}
             </div>
 
-            {/* Nome */}
-            <div
-              className="absolute left-0 right-0 text-center"
-              style={{ top: "73.5%" }}
+            {/* Nome — esticado para preencher a faixa abaixo de DEAD OR ALIVE */}
+            <svg
+              className="absolute"
+              style={{ left: "10%", top: "72%", width: "80%", height: "8.5%" }}
+              viewBox="0 0 200 26"
+              preserveAspectRatio="xMidYMid meet"
+              role="img"
+              aria-label={pirate.name}
             >
-              <span
-                style={{ fontFamily: posterSerif, fontWeight: 700 }}
-                className="text-[clamp(1.15rem,5.8vw,1.65rem)] uppercase tracking-[0.03em] text-[#33230f]"
+              <text
+                x="100"
+                y="20"
+                textAnchor="middle"
+                textLength="196"
+                lengthAdjust="spacingAndGlyphs"
+                style={{ fontFamily: posterName, fontWeight: 700, fill: "#2b1c0a" }}
+                fontSize="24"
               >
-                {pirate.name}
-              </span>
-            </div>
+                {pirate.name.toUpperCase()}
+              </text>
+            </svg>
 
             {/* Recompensa */}
             <div
               className="absolute left-0 right-0 text-center"
-              style={{ top: "80%" }}
+              style={{ top: "82%" }}
             >
               <span
-                style={{ fontFamily: posterSerif, fontWeight: 700 }}
-                className="text-[clamp(0.95rem,4.6vw,1.28rem)] tracking-[0.01em] text-[#3a2a18]"
+                style={{ fontFamily: posterName, fontWeight: 700 }}
+                className="text-[clamp(0.95rem,4.7vw,1.3rem)] tracking-[0.02em] text-[#2b1c0a]"
               >
                 <span className="mr-1">&#3647;</span>
                 {bounty.toLocaleString("pt-BR")}
