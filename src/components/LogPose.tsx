@@ -42,7 +42,7 @@ function Dome({
   rotate: MotionValue<number>;
 }) {
   return (
-    <div className="absolute" style={{ width: "37%", height: "37%", ...style }}>
+    <div className="absolute" style={{ width: "100%", height: "100%", ...style }}>
       <div
         className="relative h-full w-full rounded-full"
         style={{
@@ -78,10 +78,8 @@ export function LogPose() {
   const { scrollYProgress } = useScroll();
   const p = useSpring(scrollYProgress, { stiffness: 70, damping: 20 });
 
-  // três ponteiros girando em ritmos diferentes, como os do Novo Mundo
-  const r1 = useTransform(p, [0, 1], [-35, 305]);
-  const r2 = useTransform(p, [0, 1], [140, -170]);
-  const r3 = useTransform(p, [0, 1], [15, 255]);
+  // ponteiro único girando conforme o scroll
+  const rot = useTransform(p, [0, 1], [-25, 335]);
 
   return (
     <nav
@@ -121,59 +119,9 @@ export function LogPose() {
         })}
       </ul>
 
-      {/* Log Pose */}
-      <div className="relative animate-sway" style={{ width: 118, height: 118 }}>
-        {/* anel dourado — atrás */}
-        <div
-          className="absolute rounded-full"
-          style={{
-            inset: "-13px -24px -13px 8px",
-            border: "9px solid",
-            borderColor: "#eec659 #cf9f2a #a87f1c #e6bf4c",
-            transform: "rotate(-18deg)",
-            boxShadow: "0 3px 5px rgba(0,0,0,0.35)",
-          }}
-        />
-
-        {/* esfera de osso/marfim */}
-        <div
-          className="absolute inset-0 rounded-full"
-          style={{
-            background:
-              "radial-gradient(circle at 30% 24%, #ece0c4 0%, #d3ba90 44%, #b0956a 72%, #876b46 100%)",
-            boxShadow:
-              "inset 0 -11px 20px rgba(70,50,25,0.5), inset 0 9px 16px rgba(255,245,220,0.45), 0 12px 24px rgba(0,0,0,0.45)",
-          }}
-        />
-
-        {/* base */}
-        <div
-          className="absolute left-1/2 -translate-x-1/2"
-          style={{
-            bottom: -7,
-            width: 26,
-            height: 13,
-            background: "linear-gradient(#b89a6f, #866b48)",
-            borderRadius: 3,
-            boxShadow: "0 2px 3px rgba(0,0,0,0.35)",
-          }}
-        />
-
-        {/* anel dourado — frente (só o arco direito passa sobre a esfera) */}
-        <div
-          className="absolute rounded-full"
-          style={{
-            inset: "-13px -24px -13px 8px",
-            border: "9px solid #eec659",
-            transform: "rotate(-18deg)",
-            clipPath: "inset(0 0 0 58%)",
-          }}
-        />
-
-        {/* três cúpulas */}
-        <Dome style={{ left: "31.5%", top: "10%" }} rotate={r1} />
-        <Dome style={{ left: "13%", top: "45%" }} rotate={r2} />
-        <Dome style={{ left: "50%", top: "45%" }} rotate={r3} />
+      {/* Bússola */}
+      <div className="relative animate-sway" style={{ width: 96, height: 96 }}>
+        <Dome style={{ inset: 0 }} rotate={rot} />
       </div>
     </nav>
   );
