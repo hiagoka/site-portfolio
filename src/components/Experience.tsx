@@ -4,21 +4,21 @@ import { Section } from "./Section";
 export function Experience() {
   return (
     <Section id="experiencia" index={3} title="Experiencia">
-      <ul>
+      <ul className="border-t border-line">
         {experience.map((job) => (
           <li
             key={job.period + job.company}
-            className="row-hover grid gap-2 border-b border-line py-7 first:border-t sm:grid-cols-[11rem_1fr] sm:gap-8"
+            className="spec-row grid gap-x-8 gap-y-2 border-b border-line px-2 py-8 md:grid-cols-[12rem_1fr]"
           >
-            <span className="font-mono text-[11px] uppercase tracking-wide text-accent sm:pt-1.5">
+            <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-hot">
               {job.period}
             </span>
             <div>
-              <h3 className="text-lg font-medium tracking-tight">
+              <h3 className="font-serif text-xl tracking-tight">
                 {job.role}
-                <span className="text-muted"> — {job.company}</span>
+                <span className="text-muted"> &mdash; {job.company}</span>
               </h3>
-              <p className="mt-1 max-w-lg text-muted">{job.summary}</p>
+              <p className="mt-1 max-w-md text-muted">{job.summary}</p>
             </div>
           </li>
         ))}

@@ -1,48 +1,50 @@
 import { profile } from "../data/portfolio";
+import { Leader } from "./Leader";
 import { Section } from "./Section";
 
 export function Contact() {
   return (
     <>
-      <Section id="contato" index={4} title="Contato">
-        <div className="max-w-2xl">
-          <p className="text-[clamp(2rem,6vw,3.25rem)] font-semibold leading-[1.05] tracking-[-0.02em]">
-            Vamos construir algo
-            <span className="text-accent">?</span>
+      <Section id="contato" index={4} title="Contato" note="fim da ficha">
+        <div className="grid gap-12 md:grid-cols-[1.3fr_1fr] md:gap-16">
+          <p className="font-serif text-[clamp(2.2rem,6vw,3.5rem)] leading-[1.05]">
+            Vamos construir <span className="italic">algo</span>
+            <span className="text-hot">?</span>
           </p>
 
-          <a
-            href={`mailto:${profile.email}`}
-            className="btn-line mt-8 inline-flex items-center gap-2 px-5 py-3 font-mono text-xs uppercase tracking-[0.15em]"
-          >
-            {profile.email}
-            <span aria-hidden>&rarr;</span>
-          </a>
-
-          <div className="mt-10 flex flex-wrap gap-x-8 gap-y-2 font-mono text-[11px] uppercase tracking-[0.16em] text-muted">
-            {profile.socials.map((s) => (
-              <a
-                key={s.label}
-                href={s.url}
-                target="_blank"
-                rel="noreferrer"
-                className="group inline-flex items-center gap-2 transition hover:text-fg"
-              >
-                <span className="text-accent">&rarr;</span>
-                {s.label}
+          <div className="border-t border-line pt-4">
+            <Leader k="Email">
+              <a href={`mailto:${profile.email}`} className="hover:text-hot">
+                {profile.email}
               </a>
+            </Leader>
+            {profile.socials.map((s) => (
+              <Leader key={s.label} k={s.label}>
+                <a
+                  href={s.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hover:text-hot"
+                >
+                  {s.url.replace(/^https?:\/\//, "")}
+                </a>
+              </Leader>
             ))}
           </div>
         </div>
+
+        <a href={`mailto:${profile.email}`} className="btn-block mt-10">
+          {profile.email} <span aria-hidden>&rarr;</span>
+        </a>
       </Section>
 
       <footer className="border-t border-line">
-        <div className="mx-auto flex max-w-content items-center justify-between px-6 py-8 font-mono text-[11px] text-muted">
+        <div className="mx-auto flex max-w-content items-center justify-between px-6 pb-16 pt-8 font-mono text-[10px] uppercase tracking-[0.2em] text-muted">
           <span>
-            {profile.name} &mdash; {new Date().getFullYear()}
+            {profile.name} / {new Date().getFullYear()}
           </span>
-          <a href="#top" className="transition hover:text-accent">
-            topo &uarr;
+          <a href="#top" className="hover:text-hot">
+            voltar ao topo &uarr;
           </a>
         </div>
       </footer>

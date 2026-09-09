@@ -9,10 +9,13 @@ export default {
         fg: "var(--fg)",
         muted: "var(--muted)",
         line: "var(--border)",
-        accent: "var(--accent)",
+        hot: "var(--hot)",
+        led: "var(--led)",
+        accent: "var(--hot)",
       },
       fontFamily: {
-        sans: ['"Space Grotesk"', "system-ui", "sans-serif"],
+        sans: ['"Instrument Sans"', "system-ui", "sans-serif"],
+        serif: ['"Instrument Serif"', "Georgia", "serif"],
         mono: ['"JetBrains Mono"', "ui-monospace", "SFMono-Regular", "monospace"],
       },
       maxWidth: {

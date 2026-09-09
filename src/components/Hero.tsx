@@ -1,71 +1,51 @@
-import { motion } from "framer-motion";
 import { profile } from "../data/portfolio";
 import { useClock } from "../hooks/useClock";
-
-const rise = {
-  initial: { opacity: 0, y: 18 },
-  animate: { opacity: 1, y: 0 },
-};
+import { Leader } from "./Leader";
 
 export function Hero() {
   const time = useClock();
+  const [first, ...rest] = profile.name.split(" ");
 
   return (
     <section
       id="top"
-      className="mx-auto flex min-h-[88vh] max-w-content flex-col justify-center px-6 pb-16 pt-20"
+      className="mx-auto grid min-h-[82vh] max-w-content items-center gap-12 px-6 py-16 md:grid-cols-[1.35fr_1fr]"
     >
-      <motion.div
-        {...rise}
-        transition={{ duration: 0.5 }}
-        className="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.25em] text-muted"
-      >
-        <span className="text-accent">&#47;&#47;</span>
-        {profile.role}
-      </motion.div>
+      <div>
+        <p className="font-mono text-[11px] uppercase tracking-[0.24em] text-muted">
+          Ficha tecnica &mdash; 01
+        </p>
 
-      <motion.h1
-        {...rise}
-        transition={{ duration: 0.55, delay: 0.05 }}
-        className="mt-6 text-[clamp(2.8rem,10vw,6.5rem)] font-semibold leading-[0.98] tracking-[-0.03em]"
-      >
-        {profile.name}
-        <span className="text-accent">.</span>
-      </motion.h1>
+        <h1 className="mt-4 font-serif text-[clamp(3.2rem,11vw,7rem)] font-normal leading-[0.9] tracking-[-0.01em]">
+          {first}
+          <br />
+          <span className="italic">{rest.join(" ")}</span>
+          <span className="text-hot">.</span>
+        </h1>
 
-      <motion.p
-        {...rise}
-        transition={{ duration: 0.55, delay: 0.12 }}
-        className="mt-8 max-w-xl text-lg leading-relaxed text-muted"
-      >
-        {profile.intro}
-      </motion.p>
+        <p className="mt-8 max-w-md text-lg leading-relaxed text-muted">
+          {profile.intro}
+        </p>
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.3, duration: 0.6 }}
-        className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-4"
-      >
-        <a
-          href="#contato"
-          className="btn-line inline-flex items-center gap-2 px-5 py-2.5 font-mono text-xs uppercase tracking-[0.15em]"
-        >
-          Entrar em contato
-          <span aria-hidden>&rarr;</span>
+        <a href="#contato" className="btn-block mt-9">
+          Entrar em contato <span aria-hidden>&rarr;</span>
         </a>
+      </div>
 
-        <span className="font-mono text-xs text-muted">
-          {profile.location} &middot; {time} local
-          {profile.available && (
-            <>
-              {" "}
-              &middot;{" "}
-              <span className="text-accent">disponivel</span>
-            </>
-          )}
-        </span>
-      </motion.div>
+      <div className="border-t border-line pt-4">
+        <Leader k="Funcao">{profile.role}</Leader>
+        <Leader k="Base">{profile.location}</Leader>
+        <Leader k="Local time">{time}</Leader>
+        <Leader k="Stack">React Native / TS</Leader>
+        <div className="leader">
+          <span className="leader__k">Status</span>
+          <span className="leader__d" />
+          <span className="leader__v inline-flex items-center gap-2">
+            <span className="led" />
+            {profile.available ? "DISPONIVEL" : "OCUPADO"}
+          </span>
+        </div>
+      </div>
     </section>
   );
 }

@@ -1,43 +1,44 @@
 import { projects } from "../data/portfolio";
+import { Leader } from "./Leader";
 import { Section } from "./Section";
 
 export function Projects() {
   return (
-    <Section id="projetos" index={1} title="Projetos">
-      <ul>
+    <Section id="projetos" index={1} title="Projetos" note={`${projects.length} registros`}>
+      <ul className="border-t border-line">
         {projects.map((p, i) => {
           const external = Boolean(p.url && p.url !== "#");
           return (
-            <li key={p.title} className="border-b border-line first:border-t">
+            <li key={p.title} className="border-b border-line">
               <a
                 href={p.url ?? "#"}
                 target={external ? "_blank" : undefined}
                 rel={external ? "noreferrer" : undefined}
-                className="row-hover group grid grid-cols-[auto_1fr] gap-x-5 gap-y-2 py-7 sm:grid-cols-[3rem_1fr_auto] sm:gap-x-8"
+                className="spec-row group grid gap-x-8 gap-y-4 px-2 py-8 md:grid-cols-[1fr_18rem]"
               >
-                <span className="font-mono text-xs text-muted sm:pt-1.5">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-
                 <div>
-                  <h3 className="flex items-center gap-2 text-2xl font-medium tracking-tight transition group-hover:text-accent">
-                    {p.title}
+                  <div className="flex items-baseline gap-3">
+                    <span className="font-mono text-[11px] text-hot">
+                      PRJ-{String(i + 1).padStart(2, "0")}
+                    </span>
+                    <h3 className="font-serif text-2xl leading-tight tracking-tight transition group-hover:italic sm:text-[1.7rem]">
+                      {p.title}
+                    </h3>
                     <span
                       aria-hidden
-                      className="text-base text-accent opacity-0 transition group-hover:translate-x-1 group-hover:opacity-100"
+                      className="text-hot opacity-0 transition group-hover:translate-x-1 group-hover:opacity-100"
                     >
                       &#8599;
                     </span>
-                  </h3>
-                  <p className="mt-2 max-w-lg text-muted">{p.description}</p>
-                  <p className="mt-3 font-mono text-[11px] uppercase tracking-wide text-muted">
-                    {p.stack.join("  /  ")}
-                  </p>
+                  </div>
+                  <p className="mt-3 max-w-md text-muted">{p.description}</p>
                 </div>
 
-                <span className="col-start-2 font-mono text-xs text-muted sm:col-start-3 sm:pt-1.5 sm:text-right">
-                  {p.year}
-                </span>
+                <div className="self-center border-t border-line pt-3 md:border-t-0 md:pt-0">
+                  <Leader k="Ano">{p.year}</Leader>
+                  <Leader k="Stack">{p.stack.join(", ")}</Leader>
+                  <Leader k="Ref">{external ? "externo" : "privado"}</Leader>
+                </div>
               </a>
             </li>
           );
