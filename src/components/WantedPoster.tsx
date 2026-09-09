@@ -94,19 +94,28 @@ export function WantedPoster() {
               </text>
             </svg>
 
-            {/* Recompensa */}
-            <div
-              className="absolute left-0 right-0 text-center"
-              style={{ top: "82%" }}
+            {/* Recompensa — tambem esticada para ganhar presenca */}
+            <svg
+              className="absolute"
+              style={{ left: "16%", top: "80.5%", width: "68%", height: "7.5%" }}
+              viewBox="0 0 200 24"
+              preserveAspectRatio="xMidYMid meet"
+              role="img"
+              aria-label={`Recompensa ${bounty.toLocaleString("pt-BR")} Berries`}
             >
-              <span
-                style={{ fontFamily: posterName, fontWeight: 700 }}
-                className="text-[clamp(0.95rem,4.7vw,1.3rem)] tracking-[0.02em] text-[#2b1c0a]"
+              <text
+                x="100"
+                y="19"
+                textAnchor="middle"
+                textLength="196"
+                lengthAdjust="spacingAndGlyphs"
+                style={{ fontFamily: posterName, fontWeight: 700, fill: "#2b1c0a" }}
+                fontSize="22"
               >
-                <span className="mr-1">&#3647;</span>
+                {"฿ "}
                 {bounty.toLocaleString("pt-BR")}
-              </span>
-            </div>
+              </text>
+            </svg>
           </div>
         </motion.div>
 
