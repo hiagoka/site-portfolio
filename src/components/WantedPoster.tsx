@@ -30,12 +30,12 @@ export function WantedPoster() {
       id="cartaz"
       className="ocean-bg flex min-h-screen items-center justify-center px-4 py-20"
     >
-      <div ref={ref} className="w-full max-w-[400px]">
+      <div ref={ref} className="flex w-full max-w-[560px] flex-col items-center">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ type: "spring", stiffness: 55, damping: 13 }}
-          className="animate-sway"
+          className="animate-sway w-full max-w-[400px]"
           style={{ filter: "drop-shadow(0 14px 26px rgba(0,0,0,0.55))" }}
         >
           <div className="relative w-full" style={{ aspectRatio: "507 / 751" }}>
@@ -119,7 +119,7 @@ export function WantedPoster() {
           </div>
         </motion.div>
 
-        <p className="mt-5 text-center font-body text-sm italic text-parchment-200/85">
+        <p className="mt-6 text-balance text-center font-body text-xl italic leading-snug text-parchment-100/90 sm:text-2xl">
           &ldquo;{pirate.epithet}&rdquo; &middot; {pirate.role}
         </p>
 
