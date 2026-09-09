@@ -1,22 +1,20 @@
-import { LogPose } from "./components/LogPose";
-import { WantedPoster } from "./components/WantedPoster";
-import { GrandLine } from "./components/GrandLine";
-import { DevilFruits } from "./components/DevilFruits";
-import { Nakama } from "./components/Nakama";
-import { TheShip } from "./components/TheShip";
-import { DenDenMushi } from "./components/DenDenMushi";
+import { Header } from "./components/Header";
+import { Hero } from "./components/Hero";
+import { Projects } from "./components/Projects";
+import { About } from "./components/About";
+import { Experience } from "./components/Experience";
+import { Contact } from "./components/Contact";
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-ocean-900">
-      <LogPose />
+    <div className="min-h-screen bg-bg text-fg">
+      <Header />
       <main>
-        <WantedPoster />
-        <GrandLine />
-        <DevilFruits />
-        <Nakama />
-        <TheShip />
-        <DenDenMushi />
+        <Hero />
+        <Projects />
+        <About />
+        <Experience />
+        <Contact />
       </main>
     </div>
   );
