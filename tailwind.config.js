@@ -30,7 +30,6 @@ export default {
         display: ['"Pirata One"', "cursive"],
         heading: ['"Cinzel"', "serif"],
         body: ['"EB Garamond"', "Georgia", "serif"],
-        wanted: ['"Alfa Slab One"', "Rockwell", "serif"],
       },
       boxShadow: {
         poster: "0 10px 30px -8px rgba(0,0,0,0.55), inset 0 0 60px rgba(90,60,20,0.25)",
