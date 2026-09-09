@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { profile } from "../data/portfolio";
+import { useLang } from "../hooks/useLang";
 
 function useScrollProgressVar() {
   useEffect(() => {
@@ -21,6 +21,7 @@ function useScrollProgressVar() {
 /** Moldura fixa com marcas de corte + barra de progresso do scroll. */
 export function Frame() {
   useScrollProgressVar();
+  const { t } = useLang();
 
   return (
     <div className="frame" aria-hidden>
@@ -35,7 +36,7 @@ export function Frame() {
       <span className="frame-tick frame-tick--r" />
       <span className="frame-label frame-label--l">HK &mdash; Portfolio &rsquo;26</span>
       <span className="frame-label frame-label--r">
-        {profile.location} &mdash; {"-23.55, -46.63"}
+        {t.location} &mdash; {"-23.55, -46.63"}
       </span>
     </div>
   );

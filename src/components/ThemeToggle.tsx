@@ -1,14 +1,16 @@
+import { useLang } from "../hooks/useLang";
 import { useTheme } from "../hooks/useTheme";
 
 export function ThemeToggle() {
   const { theme, toggle } = useTheme();
+  const { t } = useLang();
   const isDark = theme === "dark";
 
   return (
     <button
       type="button"
       onClick={toggle}
-      aria-label={isDark ? "Mudar para tema claro" : "Mudar para tema escuro"}
+      aria-label={isDark ? t.ui.themeToLight : t.ui.themeToDark}
       className="group grid h-9 w-9 place-items-center overflow-hidden border border-line text-muted transition hover:border-accent hover:text-accent"
     >
       <span className="transition-transform duration-500 group-hover:rotate-[90deg]">

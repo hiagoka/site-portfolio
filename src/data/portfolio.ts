@@ -1,15 +1,10 @@
-// Todo o conteudo do portfolio vive aqui. Edite a vontade.
+// Dados neutros de idioma. Os textos ficam em content.ts (casam por indice).
 
 export const profile = {
   name: "Hiago Kalil",
-  role: "Desenvolvedor Mobile & Web",
-  location: "Brasil",
   available: true,
-  // Coloque aqui a URL ou o import da sua foto (ex: import foto from "../assets/foto.jpg").
-  // Vazio => mostra um placeholder.
+  // URL ou import da sua foto (ex: import foto from "../assets/foto.jpg"). Vazio => placeholder.
   photo: "",
-  intro:
-    "Construo aplicativos e interfaces com foco em clareza, performance e um codigo que o proximo dev entende. Atualmente na frente mobile do Prepara+.",
   email: "hiagokalil@hotmail.com",
   socials: [
     { label: "GitHub", url: "https://github.com/hiagokalil" },
@@ -18,108 +13,60 @@ export const profile = {
 };
 
 export type Project = {
-  title: string;
   year: string;
-  description: string;
   stack: string[];
   url?: string;
-  // Midia do card que abre ao clicar. Preencha um dos dois:
+  // Midia do card. Preencha um dos dois:
   //   video: link do YouTube / Loom / Vimeo, ou URL de um .mp4
   //   image: URL ou import de uma imagem
   video?: string;
   image?: string;
-  // Texto mais longo, opcional, mostrado no card.
-  detail?: string;
 };
 
 export const projects: Project[] = [
   {
-    title: "Prepara+",
     year: "2024",
-    description:
-      "App de estudos com trilhas, simulados e acompanhamento de progresso do aluno.",
-    stack: ["React Native", "TypeScript", "Expo"],
+    stack: ["React Native", "TypeScript", "Firebase"],
     url: "#",
     video: "",
     image: "",
-    detail: "",
   },
   {
-    title: "Chat em tempo real",
     year: "2024",
-    description:
-      "Mensagens com salas, presenca, fila offline e reconciliacao de estado ao reconectar.",
-    stack: ["React Native", "Socket.IO", "Node"],
+    stack: ["React Native", "Node.js", "Firebase"],
     url: "#",
     video: "",
     image: "",
   },
   {
-    title: "Dashboard de metricas",
     year: "2023",
-    description:
-      "Painel para acompanhar entregas e squads, com filtros salvos e exportacao.",
-    stack: ["React", "Vite", "Recharts"],
+    stack: ["React", "TypeScript"],
     url: "#",
     video: "",
     image: "",
   },
   {
-    title: "Auditor de prontidao iOS",
     year: "2023",
-    description:
-      "CLI com agentes de IA que revisam metadados e assets de um app antes da submissao a App Store.",
-    stack: ["Node", "TypeScript", "LLM"],
+    stack: ["Node.js", "TypeScript"],
     url: "#",
     video: "",
     image: "",
   },
 ];
 
-export const skills = [
-  { group: "Mobile", items: ["React Native", "Swift"] },
-  { group: "Web", items: ["React", "TypeScript", "JavaScript"] },
-  { group: "Back-end", items: ["Node.js", "Firebase"] },
-  { group: "Ferramentas", items: ["Git"] },
+// So os itens; o nome do grupo vem de content.ts (skillGroups), por indice.
+export const skills: string[][] = [
+  ["React Native", "Swift"],
+  ["React", "TypeScript", "JavaScript"],
+  ["Node.js", "Firebase"],
+  ["Git"],
 ];
 
-export type Job = {
-  period: string;
-  role: string;
-  company: string;
-  summary: string;
-};
-
-export const experience: Job[] = [
-  {
-    period: "2024 — agora",
-    role: "Desenvolvedor Mobile",
-    company: "Prepara+",
-    summary:
-      "Lidero a frente mobile do app, defino padroes de navegacao e coordeno a integracao com o back-end.",
-  },
-  {
-    period: "2022 — 2024",
-    role: "Desenvolvedor Front-end",
-    company: "Freelance",
-    summary:
-      "Landing pages, e-commerces e dashboards para pequenos negocios, do design a hospedagem.",
-  },
-  {
-    period: "2020 — 2022",
-    role: "Estudante & primeiros projetos",
-    company: "Faculdade / comunidade",
-    summary:
-      "Fundamentos de web, algoritmos e os primeiros apps publicados.",
-  },
-];
-
-export const about =
-  "Comecei mexendo em HTML e CSS por curiosidade e nao parei mais. Hoje foco em mobile, mas gosto do processo inteiro: design que respeita o usuario, codigo legivel e entregas que chegam ao fim. Fora do editor, geralmente estou testando alguma ferramenta nova ou lendo sobre produto.";
+// So a ordem/quantidade; periodo, cargo, empresa e resumo vem de content.ts.
 
 export const nav = [
-  { id: "projetos", label: "Projetos" },
-  { id: "sobre", label: "Sobre" },
-  { id: "experiencia", label: "Experiencia" },
-  { id: "contato", label: "Contato" },
+  { id: "projetos" },
+  { id: "sobre" },
+  { id: "experiencia" },
+  { id: "contato" },
 ];

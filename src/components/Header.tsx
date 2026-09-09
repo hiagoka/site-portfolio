@@ -1,16 +1,19 @@
 import { useMemo } from "react";
 import { nav, profile } from "../data/portfolio";
 import { useActiveSection } from "../hooks/useActiveSection";
+import { useLang } from "../hooks/useLang";
 import { Clock } from "./Clock";
+import { LangToggle } from "./LangToggle";
 import { ThemeToggle } from "./ThemeToggle";
 
 export function Header() {
   const ids = useMemo(() => nav.map((n) => n.id), []);
   const active = useActiveSection(ids);
+  const { t } = useLang();
 
   return (
     <header className="sticky top-0 z-30 border-b border-line bg-bg">
-      <div className="mx-auto flex max-w-content items-center justify-between px-6 py-3">
+      <div className="mx-auto flex max-w-content items-center justify-between gap-4 px-6 py-4">
         <a href="#top" className="font-mono text-sm tracking-tight text-fg">
           {profile.name.toLowerCase().replace(/\s+/g, "-")}
           <span className="cursor">_</span>
@@ -30,14 +33,15 @@ export function Header() {
                 <span className={on ? "text-hot" : ""}>
                   [{String(i + 1).padStart(2, "0")}]
                 </span>{" "}
-                {n.label}
+                {t.nav[n.id]}
               </a>
             );
           })}
         </nav>
 
-        <div className="flex items-center gap-4">
-          <Clock className="hidden font-mono text-[11px] tabular-nums text-muted sm:block" />
+        <div className="flex items-center gap-3">
+          <Clock className="hidden font-mono text-[11px] tabular-nums text-muted lg:block" />
+          <LangToggle />
           <ThemeToggle />
         </div>
       </div>

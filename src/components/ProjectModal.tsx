@@ -1,19 +1,21 @@
 import { useEffect, useRef } from "react";
-import type { Project } from "../data/portfolio";
+import { projects } from "../data/portfolio";
+import { useLang } from "../hooks/useLang";
 import { Leader } from "./Leader";
 import { ProjectMedia } from "./ProjectMedia";
 
 type Props = {
-  project: Project | null;
-  index: number;
+  index: number | null;
   onClose: () => void;
 };
 
-export function ProjectModal({ project, index, onClose }: Props) {
+export function ProjectModal({ index, onClose }: Props) {
+  const { t } = useLang();
   const closeRef = useRef<HTMLButtonElement>(null);
+  const isOpen = index !== null;
 
   useEffect(() => {
-    if (!project) return;
+    if (!isOpen) return;
 
     const prevOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
@@ -28,10 +30,12 @@ export function ProjectModal({ project, index, onClose }: Props) {
       document.body.style.overflow = prevOverflow;
       window.removeEventListener("keydown", onKey);
     };
-  }, [project, onClose]);
+  }, [isOpen, onClose]);
 
-  if (!project) return null;
+  if (index === null) return null;
 
+  const project = projects[index];
+  const text = t.projects[index];
   const external = Boolean(project.url && project.url !== "#");
   const code = `PRJ-${String(index + 1).padStart(2, "0")}`;
 
@@ -45,7 +49,7 @@ export function ProjectModal({ project, index, onClose }: Props) {
       <div
         role="dialog"
         aria-modal="true"
-        aria-label={`${project.title} — detalhe`}
+        aria-label={text.title}
         className="modal-panel relative w-full max-w-3xl border border-line bg-bg"
       >
         <span className="modal-crop modal-crop--tl" />
@@ -56,32 +60,31 @@ export function ProjectModal({ project, index, onClose }: Props) {
         <header className="flex items-baseline justify-between gap-4 border-b border-line px-6 py-4">
           <div className="flex items-baseline gap-3">
             <span className="font-mono text-[11px] text-hot">{code}</span>
-            <h3 className="font-serif text-2xl tracking-tight">{project.title}</h3>
+            <h3 className="font-serif text-2xl tracking-tight">{text.title}</h3>
           </div>
           <button
             ref={closeRef}
             type="button"
             onClick={onClose}
-            aria-label="Fechar"
+            aria-label={t.ui.close}
             className="font-mono text-xs uppercase tracking-[0.16em] text-muted transition hover:text-hot"
           >
-            fechar &times;
+            {t.ui.close} &times;
           </button>
         </header>
 
         <div className="space-y-6 p-6">
-          <ProjectMedia project={project} />
+          <ProjectMedia
+            video={project.video}
+            image={project.image}
+            title={text.title}
+          />
 
           <div className="grid gap-8 md:grid-cols-[1fr_16rem]">
-            <div>
-              <p className="text-muted">{project.description}</p>
-              {project.detail && (
-                <p className="mt-4 leading-relaxed">{project.detail}</p>
-              )}
-            </div>
+            <p className="text-muted">{text.description}</p>
             <div className="border-t border-line pt-3 md:border-t-0 md:pt-0">
-              <Leader k="Ano">{project.year}</Leader>
-              <Leader k="Stack">{project.stack.join(", ")}</Leader>
+              <Leader k={t.ui.year}>{project.year}</Leader>
+              <Leader k={t.ui.stack}>{project.stack.join(", ")}</Leader>
               {external && (
                 <a
                   href={project.url}
@@ -89,7 +92,7 @@ export function ProjectModal({ project, index, onClose }: Props) {
                   rel="noreferrer"
                   className="btn-block mt-4 !py-2 !text-[11px]"
                 >
-                  Ver projeto <span aria-hidden>&#8599;</span>
+                  {t.ui.viewProject} <span aria-hidden>&#8599;</span>
                 </a>
               )}
             </div>

@@ -1,4 +1,4 @@
-import type { Project } from "../data/portfolio";
+import { useLang } from "../hooks/useLang";
 
 /** Converte um link do YouTube / Loom / Vimeo em URL de embed. */
 function toEmbed(url: string): string | null {
@@ -26,8 +26,10 @@ function toEmbed(url: string): string | null {
   return null;
 }
 
-export function ProjectMedia({ project }: { project: Project }) {
-  const { video, image, title } = project;
+type Props = { video?: string; image?: string; title: string };
+
+export function ProjectMedia({ video, image, title }: Props) {
+  const { t } = useLang();
 
   if (video) {
     const embed = toEmbed(video);
@@ -36,7 +38,7 @@ export function ProjectMedia({ project }: { project: Project }) {
         <div className="aspect-video w-full border border-line bg-black">
           <iframe
             src={embed}
-            title={`Apresentacao — ${title}`}
+            title={title}
             className="h-full w-full"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
@@ -66,7 +68,7 @@ export function ProjectMedia({ project }: { project: Project }) {
 
   return (
     <div className="flex aspect-video w-full items-center justify-center border border-dashed border-line font-mono text-[10px] uppercase tracking-[0.3em] text-muted">
-      [ sem midia &mdash; adicione video ou image ]
+      {t.ui.noMedia}
     </div>
   );
 }

@@ -1,11 +1,13 @@
-import { experience } from "../data/portfolio";
+import { useLang } from "../hooks/useLang";
 import { Section } from "./Section";
 
 export function Experience() {
+  const { t } = useLang();
+
   return (
-    <Section id="experiencia" index={3} title="Experiencia">
+    <Section id="experiencia" index={3} title={t.nav.experiencia}>
       <ul className="border-t border-line">
-        {experience.map((job) => (
+        {t.experience.map((job) => (
           <li
             key={job.period + job.company}
             className="spec-row grid gap-x-8 gap-y-2 border-b border-line px-2 py-8 md:grid-cols-[12rem_1fr]"

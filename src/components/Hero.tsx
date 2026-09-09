@@ -1,6 +1,8 @@
 import { profile } from "../data/portfolio";
+import { useLang } from "../hooks/useLang";
 
 export function Hero() {
+  const { t } = useLang();
   const [first, ...rest] = profile.name.split(" ");
 
   return (
@@ -10,7 +12,7 @@ export function Hero() {
     >
       <div>
         <p className="font-mono text-[11px] uppercase tracking-[0.24em] text-muted">
-          Ficha tecnica &mdash; 01
+          {t.ui.specSheet}
         </p>
 
         <h1 className="mt-4 font-serif text-[clamp(3rem,10vw,6.5rem)] font-normal leading-[0.9] tracking-[-0.01em]">
@@ -21,22 +23,22 @@ export function Hero() {
         </h1>
 
         <p className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-[11px] uppercase tracking-[0.18em] text-muted">
-          <span className="text-fg">{profile.role}</span>
+          <span className="text-fg">{t.role}</span>
           <span className="text-line">/</span>
-          <span>{profile.location}</span>
+          <span>{t.location}</span>
           <span className="text-line">/</span>
           <span className="inline-flex items-center gap-1.5">
             <span className="led" />
-            {profile.available ? "Disponivel" : "Ocupado"}
+            {profile.available ? t.ui.available : t.ui.busy}
           </span>
         </p>
 
         <p className="mt-8 max-w-md text-lg leading-relaxed text-muted">
-          {profile.intro}
+          {t.intro}
         </p>
 
         <a href="#contato" className="btn-block mt-9">
-          Entrar em contato <span aria-hidden>&rarr;</span>
+          {t.ui.getInTouch} <span aria-hidden>&rarr;</span>
         </a>
       </div>
 
@@ -50,12 +52,12 @@ export function Hero() {
             />
           ) : (
             <div className="flex h-full w-full items-center justify-center font-mono text-[10px] uppercase tracking-[0.35em] text-muted">
-              [ retrato ]
+              {t.ui.portrait}
             </div>
           )}
         </div>
         <figcaption className="mt-2 flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.2em] text-muted">
-          <span>Fig. 01</span>
+          <span>{t.ui.fig}</span>
           <span>{profile.name}</span>
         </figcaption>
       </figure>

@@ -8,6 +8,7 @@ import {
   siNodedotjs,
   type SimpleIcon,
 } from "simple-icons";
+import { useLang } from "../hooks/useLang";
 
 // { icone, rotulo } — o rotulo permite "React Native" reaproveitando o icone do React.
 const TECHS: { icon: SimpleIcon; label: string }[] = [
@@ -47,12 +48,13 @@ function Row({ hidden = false }: { hidden?: boolean }) {
 }
 
 export function Ticker() {
+  const { t } = useLang();
   return (
     <div className="overflow-hidden border-b border-line py-2.5">
       <div
         className="marquee ticker-mask"
         role="marquee"
-        aria-label="Tecnologias"
+        aria-label={t.ui.techAria}
       >
         <Row />
         <Row hidden />

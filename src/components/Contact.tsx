@@ -1,34 +1,50 @@
 import { profile } from "../data/portfolio";
-import { Leader } from "./Leader";
+import { useLang } from "../hooks/useLang";
 import { Section } from "./Section";
 
 export function Contact() {
+  const { t } = useLang();
+  const [a, b, c] = t.contactLine;
+
   return (
     <>
-      <Section id="contato" index={4} title="Contato" note="fim da ficha">
+      <Section
+        id="contato"
+        index={4}
+        title={t.nav.contato}
+        note={t.ui.endOfSheet}
+      >
         <div className="grid gap-12 md:grid-cols-[1.3fr_1fr] md:gap-16">
           <p className="font-serif text-[clamp(2.2rem,6vw,3.5rem)] leading-[1.05]">
-            Vamos construir <span className="italic">algo</span>
-            <span className="text-hot">?</span>
+            {a} <span className="italic">{b}</span>
+            <span className="text-hot">{c}</span>
           </p>
 
           <div className="border-t border-line pt-4">
-            <Leader k="Email">
-              <a href={`mailto:${profile.email}`} className="hover:text-hot">
-                {profile.email}
-              </a>
-            </Leader>
-            {profile.socials.map((s) => (
-              <Leader key={s.label} k={s.label}>
-                <a
-                  href={s.url}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="hover:text-hot"
-                >
-                  {s.url.replace(/^https?:\/\//, "")}
+            <div className="leader">
+              <span className="leader__k">Email</span>
+              <span className="leader__d" />
+              <span className="leader__v">
+                <a href={`mailto:${profile.email}`} className="hover:text-hot">
+                  {profile.email}
                 </a>
-              </Leader>
+              </span>
+            </div>
+            {profile.socials.map((s) => (
+              <div className="leader" key={s.label}>
+                <span className="leader__k">{s.label}</span>
+                <span className="leader__d" />
+                <span className="leader__v">
+                  <a
+                    href={s.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="hover:text-hot"
+                  >
+                    {s.url.replace(/^https?:\/\//, "")}
+                  </a>
+                </span>
+              </div>
             ))}
           </div>
         </div>
@@ -44,7 +60,7 @@ export function Contact() {
             {profile.name} / {new Date().getFullYear()}
           </span>
           <a href="#top" className="hover:text-hot">
-            voltar ao topo &uarr;
+            {t.ui.backToTop} &uarr;
           </a>
         </div>
       </footer>

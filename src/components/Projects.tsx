@@ -1,22 +1,24 @@
 import { useState } from "react";
 import { projects } from "../data/portfolio";
+import { useLang } from "../hooks/useLang";
 import { Leader } from "./Leader";
 import { ProjectModal } from "./ProjectModal";
 import { Section } from "./Section";
 
 export function Projects() {
+  const { t } = useLang();
   const [open, setOpen] = useState<number | null>(null);
 
   return (
     <Section
       id="projetos"
       index={1}
-      title="Projetos"
-      note={`${projects.length} registros`}
+      title={t.nav.projetos}
+      note={t.ui.records(projects.length)}
     >
       <ul className="border-t border-line">
         {projects.map((p, i) => (
-          <li key={p.title} className="border-b border-line">
+          <li key={i} className="border-b border-line">
             <button
               type="button"
               onClick={() => setOpen(i)}
@@ -28,23 +30,29 @@ export function Projects() {
                     PRJ-{String(i + 1).padStart(2, "0")}
                   </span>
                   <h3 className="font-serif text-2xl leading-tight tracking-tight transition group-hover:italic sm:text-[1.7rem]">
-                    {p.title}
+                    {t.projects[i].title}
                   </h3>
                   <span
                     aria-hidden
                     className="font-mono text-[10px] uppercase tracking-[0.15em] text-muted opacity-0 transition group-hover:opacity-100"
                   >
-                    abrir &rarr;
+                    {t.ui.open} &rarr;
                   </span>
                 </div>
-                <p className="mt-3 max-w-md text-muted">{p.description}</p>
+                <p className="mt-3 max-w-md text-muted">
+                  {t.projects[i].description}
+                </p>
               </div>
 
               <div className="self-center border-t border-line pt-3 md:border-t-0 md:pt-0">
-                <Leader k="Ano">{p.year}</Leader>
-                <Leader k="Stack">{p.stack.join(", ")}</Leader>
-                <Leader k="Midia">
-                  {p.video ? "video" : p.image ? "foto" : "—"}
+                <Leader k={t.ui.year}>{p.year}</Leader>
+                <Leader k={t.ui.stack}>{p.stack.join(", ")}</Leader>
+                <Leader k={t.ui.media}>
+                  {p.video
+                    ? t.ui.mediaVideo
+                    : p.image
+                      ? t.ui.mediaPhoto
+                      : t.ui.mediaNone}
                 </Leader>
               </div>
             </button>
@@ -53,8 +61,7 @@ export function Projects() {
       </ul>
 
       <ProjectModal
-        project={open === null ? null : projects[open]}
-        index={open ?? 0}
+        index={open}
         onClose={() => setOpen(null)}
       />
     </Section>
