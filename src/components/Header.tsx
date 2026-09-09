@@ -1,13 +1,12 @@
 import { useMemo } from "react";
 import { nav, profile } from "../data/portfolio";
 import { useActiveSection } from "../hooks/useActiveSection";
-import { useClock } from "../hooks/useClock";
+import { Clock } from "./Clock";
 import { ThemeToggle } from "./ThemeToggle";
 
 export function Header() {
   const ids = useMemo(() => nav.map((n) => n.id), []);
   const active = useActiveSection(ids);
-  const time = useClock();
 
   return (
     <header className="sticky top-0 z-30 border-b border-line bg-bg">
@@ -38,9 +37,7 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-4">
-          <span className="hidden font-mono text-[11px] text-muted sm:block">
-            {time}
-          </span>
+          <Clock className="hidden font-mono text-[11px] tabular-nums text-muted sm:block" />
           <ThemeToggle />
         </div>
       </div>

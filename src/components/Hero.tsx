@@ -1,9 +1,8 @@
 import { profile } from "../data/portfolio";
-import { useClock } from "../hooks/useClock";
+import { Clock } from "./Clock";
 import { Leader } from "./Leader";
 
 export function Hero() {
-  const time = useClock();
   const [first, ...rest] = profile.name.split(" ");
 
   return (
@@ -35,7 +34,9 @@ export function Hero() {
       <div className="border-t border-line pt-4">
         <Leader k="Funcao">{profile.role}</Leader>
         <Leader k="Base">{profile.location}</Leader>
-        <Leader k="Local time">{time}</Leader>
+        <Leader k="Local time">
+          <Clock />
+        </Leader>
         <Leader k="Stack">React Native / TS</Leader>
         <div className="leader">
           <span className="leader__k">Status</span>

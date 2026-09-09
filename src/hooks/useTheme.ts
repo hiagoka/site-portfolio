@@ -13,13 +13,27 @@ function current(): Theme {
 export function useTheme() {
   const [theme, setThemeState] = useState<Theme>(current);
 
-  const setTheme = (next: Theme) => {
+  const apply = (next: Theme) => {
     setThemeState(next);
     document.documentElement.setAttribute("data-theme", next);
     try {
       localStorage.setItem("theme", next);
     } catch {
       /* modo privado / storage bloqueado */
+    }
+  };
+
+  const setTheme = (next: Theme) => {
+    const doc = document as Document & {
+      startViewTransition?: (cb: () => void) => void;
+    };
+    if (
+      doc.startViewTransition &&
+      !window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      doc.startViewTransition(() => apply(next));
+    } else {
+      apply(next);
     }
   };
 
