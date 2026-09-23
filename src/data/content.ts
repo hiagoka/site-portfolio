@@ -49,12 +49,12 @@ const en = {
     {
       title: "AI Chat",
       description:
-        "Native mobile chat with GPT-4o-mini — no login, local history, and a lean Node/Express API behind it.",
+        "Native mobile chat with GPT-4o-mini, no login required, local history, and a lean Node/Express API behind it.",
     },
     {
       title: "Pulso",
       description:
-        "AI-assisted workout app in React Native/Expo — building the core training logic on top of the project skeleton.",
+        "AI-assisted workout app in React Native/Expo, building the core training logic on top of the project skeleton.",
     },
     {
       title: "iOS readiness auditor",
@@ -76,7 +76,7 @@ const en = {
       role: "Front-end Developer",
       company: "Freelance",
       summary:
-        "Landing pages, e-commerce, and dashboards for small businesses — from design to hosting.",
+        "Landing pages, e-commerce, and dashboards for small businesses, from design to hosting.",
     },
     {
       period: "2020 — 2022",
@@ -137,12 +137,12 @@ const pt: Dict = {
     {
       title: "Chat com IA",
       description:
-        "Chat mobile nativo com GPT-4o-mini — sem login, historico local e uma API Node/Express enxuta por tras.",
+        "Chat mobile nativo com GPT-4o-mini, sem necessidade de login, historico local e uma API Node/Express enxuta por tras.",
     },
     {
       title: "Pulso",
       description:
-        "App de treino assistido por IA em React Native/Expo — construindo a logica principal de treino sobre o esqueleto do projeto.",
+        "App de treino assistido por IA em React Native/Expo, construindo a logica principal de treino sobre o esqueleto do projeto.",
     },
     {
       title: "Auditor de prontidao iOS",
