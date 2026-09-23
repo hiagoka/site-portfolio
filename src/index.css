@@ -225,28 +225,6 @@ section[id] {
   transition: width 0.1s linear;
 }
 
-/* ---------- modal de projeto ---------- */
-@keyframes modal-fade {
-  from {
-    opacity: 0;
-  }
-}
-@keyframes modal-pop {
-  from {
-    opacity: 0;
-    transform: translateY(12px) scale(0.985);
-  }
-}
-.modal-backdrop {
-  background: color-mix(in oklab, var(--bg) 55%, #000 45%);
-  backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
-  animation: modal-fade 0.16s ease;
-}
-.modal-panel {
-  animation: modal-pop 0.22s cubic-bezier(0.2, 0.7, 0.2, 1);
-  box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.6);
-}
 /* cursor piscando */
 @keyframes blink {
   50% {

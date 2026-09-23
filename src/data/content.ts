@@ -30,17 +30,9 @@ const en = {
     fig: "Fig. 01",
     records: (n: number) => `${n} records`,
     endOfSheet: "end of sheet",
-    open: "open",
-    close: "close",
     year: "Year",
     stack: "Stack",
-    media: "Media",
-    ref: "Ref",
-    mediaVideo: "video",
-    mediaPhoto: "photo",
-    mediaNone: "—",
-    noMedia: "[ no media — add video or image ]",
-    viewProject: "View project",
+    viewRepo: "View on GitHub",
     backToTop: "back to top",
     techAria: "Technologies",
     themeToLight: "Switch to light theme",
@@ -55,19 +47,19 @@ const en = {
         "Study app with learning tracks, mock exams, and student progress tracking.",
     },
     {
-      title: "Real-time chat",
+      title: "AI Chat",
       description:
-        "Messaging with rooms, presence, an offline queue, and state reconciliation on reconnect.",
+        "Native mobile chat with GPT-4o-mini — no login, local history, and a lean Node/Express API behind it.",
     },
     {
       title: "Pulso",
       description:
-        "AI-powered workout app, currently in early development.",
+        "AI-assisted workout app in React Native/Expo — building the core training logic on top of the project skeleton.",
     },
     {
       title: "iOS readiness auditor",
       description:
-        "CLI with AI agents that review an app's metadata and assets before App Store submission.",
+        "Multi-agent CLI (privacy, permissions, orchestrator) that audits React Native/iOS apps for App Store compliance and outputs a JSON/HTML report.",
     },
   ],
 
@@ -126,17 +118,9 @@ const pt: Dict = {
     fig: "Fig. 01",
     records: (n: number) => `${n} registros`,
     endOfSheet: "fim da ficha",
-    open: "abrir",
-    close: "fechar",
     year: "Ano",
     stack: "Stack",
-    media: "Midia",
-    ref: "Ref",
-    mediaVideo: "video",
-    mediaPhoto: "foto",
-    mediaNone: "—",
-    noMedia: "[ sem midia — adicione video ou imagem ]",
-    viewProject: "Ver projeto",
+    viewRepo: "Ver no GitHub",
     backToTop: "voltar ao topo",
     techAria: "Tecnologias",
     themeToLight: "Mudar para tema claro",
@@ -151,19 +135,19 @@ const pt: Dict = {
         "App de estudos com trilhas, simulados e acompanhamento de progresso do aluno.",
     },
     {
-      title: "Chat em tempo real",
+      title: "Chat com IA",
       description:
-        "Mensagens com salas, presenca, fila offline e reconciliacao de estado ao reconectar.",
+        "Chat mobile nativo com GPT-4o-mini — sem login, historico local e uma API Node/Express enxuta por tras.",
     },
     {
       title: "Pulso",
       description:
-        "App de treino com inteligencia artificial, ainda em desenvolvimento inicial.",
+        "App de treino assistido por IA em React Native/Expo — construindo a logica principal de treino sobre o esqueleto do projeto.",
     },
     {
       title: "Auditor de prontidao iOS",
       description:
-        "CLI com agentes de IA que revisam metadados e assets de um app antes da submissao a App Store.",
+        "CLI multiagente (privacidade, permissoes, orquestrador) que audita apps React Native/iOS quanto a conformidade com a App Store e gera um relatorio em JSON/HTML.",
     },
   ],
 

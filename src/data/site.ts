@@ -15,12 +15,9 @@ export const profile = {
 export type Project = {
   year: string;
   stack: string[];
+  // Link do repositorio no GitHub. Deixe "#" enquanto o repo nao for publico
+  // (o botao "Ver no GitHub" so aparece quando ha um link real).
   url?: string;
-  // Midia do card. Preencha um dos dois:
-  //   video: link do YouTube / Loom / Vimeo, ou URL de um .mp4
-  //   image: URL ou import de uma imagem
-  video?: string;
-  image?: string;
 };
 
 export const projects: Project[] = [
@@ -28,29 +25,21 @@ export const projects: Project[] = [
     year: "2026",
     stack: ["React Native", "TypeScript", "Firebase"],
     url: "#",
-    video: "",
-    image: "",
   },
   {
     year: "2025",
-    stack: ["React Native", "Node.js", "Firebase"],
-    url: "#",
-    video: "",
-    image: "",
+    stack: ["React Native", "Node.js", "OpenAI"],
+    url: "https://github.com/hiagoka/ai-chat-mobile",
   },
   {
     year: "2026",
     stack: ["Swift"],
     url: "https://github.com/hiagoka/health-app-pulso",
-    video: "",
-    image: "",
   },
   {
     year: "2026",
     stack: ["Node.js", "TypeScript"],
-    url: "#",
-    video: "",
-    image: "",
+    url: "https://github.com/hiagoka/auditor-app-readiness",
   },
 ];
 
