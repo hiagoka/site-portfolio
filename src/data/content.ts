@@ -76,7 +76,7 @@ const en = {
       role: "Mobile & Front-end Developer",
       company: "Fabrica de Software",
       summary:
-        "Developed mobile and front-end projects for PMPB (Paraiba Military Police) and PROCON-PB.",
+        "Delivered production mobile and front-end apps for Paraiba state government agencies, PMPB (Paraiba Military Police) and PROCON-PB, bringing technology to essential public services.",
     },
     {
       period: "2022 — 2023",
@@ -164,7 +164,7 @@ const pt: Dict = {
       role: "Desenvolvedor Mobile e Front-end",
       company: "Fabrica de Software",
       summary:
-        "Desenvolvi projetos mobile e front-end para a PMPB (Policia Militar da Paraiba) e o PROCON-PB.",
+        "Entreguei aplicacoes mobile e front-end em producao para orgaos do governo da Paraiba, a PMPB (Policia Militar da Paraiba) e o PROCON-PB, levando tecnologia a servicos publicos essenciais.",
     },
     {
       period: "2022 — 2023",
