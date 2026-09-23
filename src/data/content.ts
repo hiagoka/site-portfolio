@@ -74,9 +74,9 @@ const en = {
     {
       period: "2023 — 2025",
       role: "Mobile & Front-end Developer",
-      company: "Fabrica de Software",
+      company: "Fábrica de Software",
       summary:
-        "Delivered production mobile and front-end apps for Paraiba state government agencies, PMPB (Paraiba Military Police) and PROCON-PB, bringing technology to essential public services.",
+        "Delivered production mobile and front-end apps for Paraíba state government agencies, PMPB (Paraíba Military Police) and PROCON-PB, bringing technology to essential public services.",
     },
     {
       period: "2022 — 2023",
@@ -95,24 +95,24 @@ const pt: Dict = {
   location: "Brasil",
   role: "Desenvolvedor Mobile & Web",
   intro:
-    "Construo aplicativos e interfaces com foco em clareza, performance e um codigo que o proximo dev entende. Atualmente na frente mobile do Prepara+.",
+    "Construo aplicativos e interfaces com foco em clareza, performance e um código que o próximo dev entende. Atualmente na frente mobile do Prepara+.",
   about:
-    "Sou desenvolvedor mobile especializado em React Native e TypeScript, com experiencia em Swift/SwiftUI para iOS nativo, Next.js no front-end web e Node.js no back-end. Gosto de apps bem estruturados, com codigo organizado e escalavel, e de acompanhar o produto da arquitetura ate a entrega. Aprendo construindo, uso IA para trabalhar com mais agilidade e tenho ingles avancado.",
+    "Sou desenvolvedor mobile especializado em React Native e TypeScript, com experiência em Swift/SwiftUI para iOS nativo, Next.js no front-end web e Node.js no back-end. Gosto de apps bem estruturados, com código organizado e escalável, e de acompanhar o produto da arquitetura até a entrega. Aprendo construindo, uso IA para trabalhar com mais agilidade e tenho inglês avançado.",
   aboutLine: "Baseado no Brasil. Aberto a trabalho remoto.",
 
   nav: {
     projetos: "Projetos",
     sobre: "Sobre",
-    experiencia: "Experiencia",
+    experiencia: "Experiência",
     contato: "Contato",
   },
 
   contactLine: ["Vamos construir", "algo", "?"],
 
   ui: {
-    specSheet: "Ficha tecnica — 01",
+    specSheet: "Ficha técnica — 01",
     getInTouch: "Entrar em contato",
-    available: "Disponivel",
+    available: "Disponível",
     busy: "Ocupado",
     portrait: "[ retrato ]",
     fig: "Fig. 01",
@@ -137,17 +137,17 @@ const pt: Dict = {
     {
       title: "Chat com IA",
       description:
-        "Chat mobile nativo com GPT-4o-mini, sem necessidade de login, historico local e uma API Node/Express enxuta por tras.",
+        "Chat mobile nativo com GPT-4o-mini, sem necessidade de login, histórico local e uma API Node/Express enxuta por trás.",
     },
     {
       title: "Pulso",
       description:
-        "App de treino assistido por IA em React Native/Expo, construindo a logica principal de treino sobre o esqueleto do projeto.",
+        "App de treino assistido por IA em React Native/Expo, construindo a lógica principal de treino sobre o esqueleto do projeto.",
     },
     {
-      title: "Auditor de prontidao iOS",
+      title: "Auditor de prontidão iOS",
       description:
-        "CLI multiagente (privacidade, permissoes, orquestrador) que audita apps React Native/iOS quanto a conformidade com a App Store e gera um relatorio em JSON/HTML.",
+        "CLI multiagente (privacidade, permissões, orquestrador) que audita apps React Native/iOS quanto à conformidade com a App Store e gera um relatório em JSON/HTML.",
     },
   ],
 
@@ -157,14 +157,14 @@ const pt: Dict = {
       role: "Desenvolvedor Mobile",
       company: "Prepara+",
       summary:
-        "Lidero a frente mobile do app, defino padroes de navegacao e coordeno a integracao com o back-end.",
+        "Lidero a frente mobile do app, defino padrões de navegação e coordeno a integração com o back-end.",
     },
     {
       period: "2023 — 2025",
       role: "Desenvolvedor Mobile e Front-end",
-      company: "Fabrica de Software",
+      company: "Fábrica de Software",
       summary:
-        "Entreguei aplicacoes mobile e front-end em producao para orgaos do governo da Paraiba, a PMPB (Policia Militar da Paraiba) e o PROCON-PB, levando tecnologia a servicos publicos essenciais.",
+        "Entreguei aplicações mobile e front-end em produção para órgãos do governo da Paraíba, a PMPB (Polícia Militar da Paraíba) e o PROCON-PB, levando tecnologia a serviços públicos essenciais.",
     },
     {
       period: "2022 — 2023",
