@@ -60,9 +60,9 @@ const en = {
         "Messaging with rooms, presence, an offline queue, and state reconciliation on reconnect.",
     },
     {
-      title: "Metrics dashboard",
+      title: "Pulso",
       description:
-        "Panel to track deliveries and squads, with saved filters and export.",
+        "AI-powered workout app, currently in early development.",
     },
     {
       title: "iOS readiness auditor",
@@ -156,9 +156,9 @@ const pt: Dict = {
         "Mensagens com salas, presenca, fila offline e reconciliacao de estado ao reconectar.",
     },
     {
-      title: "Dashboard de metricas",
+      title: "Pulso",
       description:
-        "Painel para acompanhar entregas e squads, com filtros salvos e exportacao.",
+        "App de treino com inteligencia artificial, ainda em desenvolvimento inicial.",
     },
     {
       title: "Auditor de prontidao iOS",
