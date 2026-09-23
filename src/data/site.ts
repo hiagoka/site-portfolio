@@ -25,7 +25,7 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    year: "2024",
+    year: "2026",
     stack: ["React Native", "TypeScript", "Firebase"],
     url: "#",
     video: "",
@@ -46,7 +46,7 @@ export const projects: Project[] = [
     image: "",
   },
   {
-    year: "2023",
+    year: "2026",
     stack: ["Node.js", "TypeScript"],
     url: "#",
     video: "",
