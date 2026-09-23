@@ -183,8 +183,8 @@ section[id] {
 }
 .leader__v {
   color: var(--fg);
-  white-space: nowrap;
   text-align: right;
+  overflow-wrap: break-word;
 }
 
 /* ---------- blocos invertidos ---------- */
