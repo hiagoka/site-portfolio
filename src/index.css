@@ -214,6 +214,26 @@ section[id] {
   color: #fff;
 }
 
+/* variante contornada do btn-block: mesmo peso, sem preenchimento */
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  border: 1px solid var(--border);
+  color: var(--fg);
+  padding: 0.75rem 1.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  transition: border-color 0.18s ease, color 0.18s ease;
+}
+.btn-outline:hover {
+  border-color: var(--hot);
+  color: var(--hot);
+}
+
 /* barra de progresso na moldura */
 .frame-progress {
   position: absolute;
