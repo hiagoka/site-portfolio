@@ -1,5 +1,4 @@
-import { useSyncExternalStore } from "react";
-import { createPersistedSetting } from "@/lib/persistedSetting";
+import { createPersistedSetting, usePersistedSetting } from "@/lib/persistedSetting";
 
 export const themeSetting = createPersistedSetting({
   attr: "data-theme",
@@ -10,10 +9,6 @@ export const themeSetting = createPersistedSetting({
 
 /** Tema com persistencia. O valor inicial ja e aplicado por um script inline no index.html. */
 export function useTheme() {
-  const theme = useSyncExternalStore(
-    themeSetting.subscribe,
-    themeSetting.getSnapshot,
-    themeSetting.getServerSnapshot
-  );
+  const theme = usePersistedSetting(themeSetting);
   return { theme, toggle: themeSetting.cycle };
 }

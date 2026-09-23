@@ -1,5 +1,5 @@
 // Dados neutros de idioma. Os textos ficam em content.ts (casam por indice).
-import foto from "../assets/hiago.webp";
+import foto from "@/assets/hiago.webp";
 
 export const profile = {
   name: "Hiago Kalil",

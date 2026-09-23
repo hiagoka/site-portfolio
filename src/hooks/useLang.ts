@@ -1,6 +1,5 @@
-import { useSyncExternalStore } from "react";
 import { content, type Dict, type Lang } from "@/data/content";
-import { createPersistedSetting } from "@/lib/persistedSetting";
+import { createPersistedSetting, usePersistedSetting } from "@/lib/persistedSetting";
 
 const langSetting = createPersistedSetting<Lang>({
   attr: "data-lang",
@@ -14,10 +13,6 @@ const langSetting = createPersistedSetting<Lang>({
 
 /** Idioma atual + dicionario. Estado compartilhado entre todos os componentes. */
 export function useLang(): { lang: Lang; t: Dict; toggle: () => void } {
-  const lang = useSyncExternalStore(
-    langSetting.subscribe,
-    langSetting.getSnapshot,
-    langSetting.getServerSnapshot
-  );
+  const lang = usePersistedSetting(langSetting);
   return { lang, t: content[lang], toggle: langSetting.cycle };
 }

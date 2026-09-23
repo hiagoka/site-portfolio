@@ -1,5 +1,6 @@
 // Estado global simples, persistido em <html data-*> + localStorage,
 // com crossfade (View Transitions) na troca. Base do tema e do idioma.
+import { useSyncExternalStore } from "react";
 
 type Options<T extends string> = {
   attr: string; // ex.: "data-theme"
@@ -56,4 +57,19 @@ export function createPersistedSetting<T extends string>(opts: Options<T>) {
     set,
     cycle: () => set(values[(values.indexOf(value) + 1) % values.length]),
   };
+}
+
+export type PersistedSetting<T extends string> = ReturnType<
+  typeof createPersistedSetting<T>
+>;
+
+/** Assina um valor criado por createPersistedSetting. */
+export function usePersistedSetting<T extends string>(
+  setting: PersistedSetting<T>
+): T {
+  return useSyncExternalStore(
+    setting.subscribe,
+    setting.getSnapshot,
+    setting.getServerSnapshot
+  );
 }
