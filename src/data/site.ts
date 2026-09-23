@@ -1,10 +1,10 @@
 // Dados neutros de idioma. Os textos ficam em content.ts (casam por indice).
+import foto from "../assets/hiago.png";
 
 export const profile = {
   name: "Hiago Kalil",
   available: true,
-  // URL ou import da sua foto (ex: import foto from "../assets/foto.jpg"). Vazio => placeholder.
-  photo: "",
+  photo: foto,
   email: "hiagokalil@hotmail.com",
   socials: [
     { label: "GitHub", url: "https://github.com/hiagokalil" },
