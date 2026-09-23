@@ -9,7 +9,7 @@ export function About() {
     <Section id="sobre">
       <div className="grid gap-12 md:grid-cols-[1fr_17rem] md:items-center md:gap-16">
         <div>
-          <div className="space-y-5 font-serif text-xl leading-[1.5]">
+          <div className="space-y-5 text-lg leading-relaxed">
             <p>{t.about}</p>
             <p className="text-muted">{t.aboutLine}</p>
           </div>
