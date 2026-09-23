@@ -1,14 +1,18 @@
-# Diario de Bordo — Portfolio (tema One Piece)
+# Portfolio — Hiago Kalil
 
-Portfolio pessoal de Hiago Kalil com estetica inspirada em One Piece (arte 100% original,
-sem assets oficiais do manga/anime).
+Site de portfolio pessoal. Estilo "ficha tecnica / prancheta": moldura com marcas
+de corte, linhas de dados com pontilhado, tipografia serifada de display +
+mono para rotulos.
+
+**Live:** _(ainda sem deploy — ver secao Deploy)_
+**Repo:** https://github.com/hiagoka/site-portfolio
 
 ## Stack
 
 - **Vite + React + TypeScript**
 - **Tailwind CSS** (v3) para o design system
-- **Framer Motion** para animacoes
-- Fontes: Pirata One / Cinzel / EB Garamond (Google Fonts)
+- Fontes: Instrument Serif (display) / Instrument Sans (corpo) / JetBrains Mono (rotulos)
+- `simple-icons` para os logos de tecnologia (ticker + mostrador circular) e das redes sociais
 
 ## Rodar
 
@@ -21,37 +25,44 @@ npm run preview  # serve o build
 
 ## Como editar o conteudo
 
-Todo o texto do site vive em **`src/data/portfolio.ts`**:
+- **`src/data/site.ts`** — dados neutros de idioma: perfil, projetos (ano/stack/link),
+  skills, ordem da navegacao.
+- **`src/data/content.ts`** — todos os textos, em `content.en` e `content.pt`.
+  As listas (`projects`, `experience`, `skillGroups`) casam por **indice** com `site.ts`.
+- **`src/data/tech.ts`** — lista de tecnologias mostrada no ticker do topo e no
+  mostrador circular da secao Sobre.
+- **`src/theme.ts`** — fonte unica de cores e fontes (gera as classes Tailwind
+  e as variaveis CSS). Trocar uma cor ou fonte do site inteiro comeca aqui.
 
-| Constante      | Secao          | Metafora One Piece                         |
-| -------------- | -------------- | ----------------------------------------- |
-| `pirate`       | Cartaz (hero)  | Cartaz de "WANTED" + recompensa animada    |
-| `islands`      | Grand Line     | Cada projeto e uma ilha com "Log da Ilha"  |
-| `fruits`       | Akuma no Mi    | Cada skill e uma fruta com nivel de dominio|
-| `crew`         | Nakama         | Experiencia profissional como tripulacao   |
-| `ship`         | O Navio        | Sobre mim + valores                        |
-| `denDenMushi`  | Contato        | Canais + formulario (abre o cliente de email)|
-
-A navegacao lateral (Log Pose) e gerada a partir de `sections`.
+Idioma padrao: portugues, com botao de troca para ingles no header (persiste
+no localStorage). Tema claro/escuro segue a preferencia do sistema por padrao,
+tambem com botao de troca.
 
 ## Estrutura
 
 ```
 src/
-  data/portfolio.ts      <- edite aqui
-  hooks/useActiveSection.ts
+  theme.ts               cores + fontes (fonte unica)
+  data/
+    site.ts              dados neutros (perfil, projetos, skills)
+    content.ts            textos en/pt
+    tech.ts               tecnologias (ticker + dial)
+  lib/
+    persistedSetting.ts   base do tema e do idioma (localStorage + View Transitions)
+  hooks/
+    useTheme.ts / useLang.ts / useActiveSection.ts
   components/
-    LogPose.tsx          bussola de scroll + nav
-    WantedPoster.tsx     hero
-    GrandLine.tsx        projetos + modal
-    DevilFruits.tsx      skills
-    Nakama.tsx           experiencia
-    TheShip.tsx          sobre
-    DenDenMushi.tsx      contato
-  index.css              texturas (pergaminho, oceano) e tokens
+    layout/    Frame (moldura), Header, Ticker
+    sections/  Hero, Projects, About, Experience, Contact
+    ui/        Section, Leader, Clock, TechDial, ThemeToggle, LangToggle,
+               TechIcon, CropMarks, IconButton
 ```
 
 ## Deploy
 
 O build e estatico (`dist/`). Funciona em Vercel, Netlify ou GitHub Pages.
-Para GitHub Pages, ajuste `base` em `vite.config.ts` para `/<nome-do-repo>/`.
+Para GitHub Pages, ajuste `base` em `vite.config.ts` para `/site-portfolio/`.
+
+Depois do primeiro deploy, atualizar em `index.html`:
+- `og:url` (adicionar, com o dominio final)
+- `og:image` / `twitter:image` (trocar `/og-image.webp` pela URL absoluta)
