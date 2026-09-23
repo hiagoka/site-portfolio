@@ -48,7 +48,7 @@ export function Hero() {
             <img
               src={profile.photo}
               alt={profile.name}
-              className="h-full w-full object-cover grayscale contrast-[1.05]"
+              className="h-full w-full object-cover"
             />
           ) : (
             <div className="flex h-full w-full items-center justify-center font-mono text-[10px] uppercase tracking-[0.35em] text-muted">
