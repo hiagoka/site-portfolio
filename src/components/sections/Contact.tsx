@@ -25,7 +25,10 @@ export function Contact() {
           </p>
 
           <div className="flex flex-col gap-3">
-            <a href={`mailto:${profile.email}`} className="btn-block w-full">
+            <a
+              href={`mailto:${profile.email}`}
+              className="btn-block w-full break-all"
+            >
               {profile.email} <span aria-hidden>&rarr;</span>
             </a>
 
@@ -41,11 +44,13 @@ export function Contact() {
                     className="btn-outline w-full"
                   >
                     {s.label}
-                    {icon ? (
-                      <TechIcon icon={icon} label={s.label} className="h-4 w-4" />
-                    ) : (
-                      <span className="font-mono text-[13px] font-semibold">in</span>
-                    )}
+                    <span aria-hidden="true">
+                      {icon ? (
+                        <TechIcon icon={icon} label={s.label} className="h-4 w-4" />
+                      ) : (
+                        <span className="font-mono text-[13px] font-semibold">in</span>
+                      )}
+                    </span>
                   </a>
                 );
               })}

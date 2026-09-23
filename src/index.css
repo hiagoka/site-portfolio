@@ -196,37 +196,32 @@ section[id] {
   font-family: var(--font-mono);
   letter-spacing: 0.1em;
 }
-.btn-block {
+/* base compartilhada; .btn-block (cheio) e .btn-outline (contornado) so
+   diferem no preenchimento/borda e no estado de hover */
+.btn-block,
+.btn-outline {
   display: inline-flex;
   align-items: center;
+  justify-content: space-between;
   gap: 0.6rem;
-  background: var(--fg);
-  color: var(--bg);
   padding: 0.75rem 1.25rem;
   font-family: var(--font-mono);
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.16em;
+}
+.btn-block {
+  background: var(--fg);
+  color: var(--bg);
   transition: background-color 0.18s ease, color 0.18s ease;
 }
 .btn-block:hover {
   background: var(--hot);
   color: #fff;
 }
-
-/* variante contornada do btn-block: mesmo peso, sem preenchimento */
 .btn-outline {
-  display: inline-flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.6rem;
   border: 1px solid var(--border);
   color: var(--fg);
-  padding: 0.75rem 1.25rem;
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
   transition: border-color 0.18s ease, color 0.18s ease;
 }
 .btn-outline:hover {
