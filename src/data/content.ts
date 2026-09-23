@@ -9,7 +9,7 @@ const en = {
   intro:
     "I build apps and interfaces focused on clarity, performance, and code the next dev can actually read. Currently on the mobile side of Prepara+.",
   about:
-    "I started messing with HTML and CSS out of curiosity and never stopped. These days I focus on mobile, but I like the whole process: design that respects the user, readable code, and shipping all the way. Away from the editor I'm usually trying a new tool or reading about product.",
+    "I'm a mobile developer specialized in React Native and TypeScript, with experience in Swift/SwiftUI for native iOS, Next.js on the web front-end, and Node.js on the back-end. I like well-structured apps, with organized, scalable code, and following the product from architecture to delivery. I learn by building, use AI to move faster, and speak advanced English.",
   aboutLine: "Based in Brazil. Open to remote work.",
 
   nav: {
@@ -97,7 +97,7 @@ const pt: Dict = {
   intro:
     "Construo aplicativos e interfaces com foco em clareza, performance e um codigo que o proximo dev entende. Atualmente na frente mobile do Prepara+.",
   about:
-    "Comecei mexendo em HTML e CSS por curiosidade e nao parei mais. Hoje foco em mobile, mas gosto do processo inteiro: design que respeita o usuario, codigo legivel e entregas que chegam ao fim. Fora do editor, geralmente estou testando alguma ferramenta nova ou lendo sobre produto.",
+    "Sou desenvolvedor mobile especializado em React Native e TypeScript, com experiencia em Swift/SwiftUI para iOS nativo, Next.js no front-end web e Node.js no back-end. Gosto de apps bem estruturados, com codigo organizado e escalavel, e de acompanhar o produto da arquitetura ate a entrega. Aprendo construindo, uso IA para trabalhar com mais agilidade e tenho ingles avancado.",
   aboutLine: "Baseado no Brasil. Aberto a trabalho remoto.",
 
   nav: {

@@ -1,5 +1,6 @@
 import {
   siReact,
+  siNextdotjs,
   siTypescript,
   siJavascript,
   siNodedotjs,
@@ -13,6 +14,7 @@ import {
 // "React Native" reaproveita o icone do React (a simple-icons nao tem um proprio).
 export const techs: { icon: SimpleIcon; label: string }[] = [
   { icon: siReact, label: "React" },
+  { icon: siNextdotjs, label: "Next.js" },
   { icon: siTypescript, label: "TypeScript" },
   { icon: siJavascript, label: "JavaScript" },
   { icon: siNodedotjs, label: "Node.js" },

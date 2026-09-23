@@ -45,8 +45,8 @@ export const projects: Project[] = [
 
 // So os itens; o nome do grupo vem de content.ts (skillGroups), por indice.
 export const skills: string[][] = [
-  ["React Native", "Swift"],
-  ["React", "TypeScript", "JavaScript"],
+  ["React Native", "Swift", "SwiftUI"],
+  ["React", "Next.js", "TypeScript", "JavaScript"],
   ["Node.js", "Firebase"],
   ["Git"],
 ];
