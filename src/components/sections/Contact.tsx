@@ -1,4 +1,4 @@
-import { Leader, Section } from "@/components/ui";
+import { Leader, Section, SocialLinks } from "@/components/ui";
 import { profile } from "@/data/site";
 import { useLang } from "@/hooks/useLang";
 
@@ -21,18 +21,10 @@ export function Contact() {
                 {profile.email}
               </a>
             </Leader>
-            {profile.socials.map((s) => (
-              <Leader key={s.label} k={s.label}>
-                <a
-                  href={s.url}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="hover:text-hot"
-                >
-                  {s.url.replace(/^https?:\/\//, "")}
-                </a>
-              </Leader>
-            ))}
+
+            <div className="mt-6">
+              <SocialLinks />
+            </div>
           </div>
         </div>
 

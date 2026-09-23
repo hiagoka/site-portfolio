@@ -9,6 +9,8 @@ export const profile = {
   socials: [
     { label: "GitHub", url: "https://github.com/hiagokalil" },
     { label: "LinkedIn", url: "https://linkedin.com/in/hiagokalil" },
+    { label: "Instagram", url: "https://instagram.com/hiagokalil" },
+    { label: "WhatsApp", url: "https://wa.me/5583988811896" },
   ],
 };
 
