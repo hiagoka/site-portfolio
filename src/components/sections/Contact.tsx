@@ -1,4 +1,5 @@
-import { Leader, Section, SocialLinks } from "@/components/ui";
+import { Fragment } from "react";
+import { Section } from "@/components/ui";
 import { profile } from "@/data/site";
 import { useLang } from "@/hooks/useLang";
 
@@ -9,28 +10,33 @@ export function Contact() {
   return (
     <>
       <Section id="contato" note={t.ui.endOfSheet}>
-        <div className="grid gap-12 md:grid-cols-[1.3fr_1fr] md:gap-16">
-          <p className="font-serif text-[clamp(2.2rem,6vw,3.5rem)] leading-[1.05]">
-            {a} <span className="italic">{b}</span>
-            <span className="text-hot">{c}</span>
-          </p>
+        <p className="font-serif text-[clamp(2.2rem,6vw,3.5rem)] leading-[1.05]">
+          {a} <span className="italic">{b}</span>
+          <span className="text-hot">{c}</span>
+        </p>
 
-          <div className="border-t border-line pt-4">
-            <Leader k="Email">
-              <a href={`mailto:${profile.email}`} className="hover:text-hot">
-                {profile.email}
-              </a>
-            </Leader>
-
-            <div className="mt-6">
-              <SocialLinks />
-            </div>
-          </div>
-        </div>
-
-        <a href={`mailto:${profile.email}`} className="btn-block mt-10">
-          {t.ui.getInTouch} <span aria-hidden>&rarr;</span>
+        <a
+          href={`mailto:${profile.email}`}
+          className="mt-8 inline-block break-all font-mono text-2xl tracking-tight transition hover:text-hot sm:text-4xl"
+        >
+          {profile.email}
         </a>
+
+        <div className="mt-6 flex flex-wrap items-center gap-2 font-mono text-xs uppercase tracking-[0.18em] text-muted">
+          {profile.socials.map((s, i) => (
+            <Fragment key={s.label}>
+              {i > 0 && <span aria-hidden>&middot;</span>}
+              <a
+                href={s.url}
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-hot"
+              >
+                {s.label}
+              </a>
+            </Fragment>
+          ))}
+        </div>
       </Section>
 
       <footer className="border-t border-line">
