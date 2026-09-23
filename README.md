@@ -6,7 +6,7 @@ combinada com fonte mono nos rótulos.
 
 Repositório: https://github.com/hiagoka/site-portfolio
 
-Site publicado: ainda não disponível (veja a seção "Deploy" abaixo).
+Site publicado: https://site-portfolio-wine.vercel.app
 
 ## Stack
 
@@ -59,12 +59,10 @@ src/
 
 ## Deploy
 
-O build é estático (pasta `dist/`) e funciona em Vercel, Netlify ou GitHub
-Pages. Para publicar no GitHub Pages, ajuste a opção `base` em
+Publicado na Vercel (`hiagokas-projects/site-portfolio`), com o
+repositório do GitHub conectado: cada push em `main` gera um novo
+deploy automaticamente.
+
+O build é estático (pasta `dist/`), então também funciona em Netlify ou
+GitHub Pages. Para publicar no GitHub Pages, ajuste a opção `base` em
 `vite.config.ts` para `/site-portfolio/`.
-
-Depois do primeiro deploy, atualize em `index.html`:
-
-- adicione a tag `og:url` com o domínio final;
-- troque `og:image` e `twitter:image` de `/og-image.webp` para a URL
-  absoluta da imagem.
