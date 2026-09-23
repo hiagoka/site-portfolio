@@ -65,24 +65,24 @@ const en = {
 
   experience: [
     {
-      period: "2024 — now",
+      period: "2026 — now",
       role: "Mobile Developer",
       company: "Prepara+",
       summary:
         "I lead the app's mobile side, set navigation patterns, and coordinate integration with the back-end.",
     },
     {
-      period: "2022 — 2024",
-      role: "Front-end Developer",
-      company: "Freelance",
+      period: "2023 — 2025",
+      role: "Mobile & Front-end Developer",
+      company: "Fabrica de Software",
       summary:
-        "Landing pages, e-commerce, and dashboards for small businesses, from design to hosting.",
+        "Developed mobile and front-end projects for PMPB (Paraiba Military Police) and PROCON-PB.",
     },
     {
-      period: "2020 — 2022",
-      role: "Student & first projects",
-      company: "College / community",
-      summary: "Web fundamentals, algorithms, and the first published apps.",
+      period: "2022 — 2023",
+      role: "Front-end Developer",
+      company: "Driveads",
+      summary: "Built front-end interfaces and features for the company's web products.",
     },
   ],
 
@@ -153,24 +153,25 @@ const pt: Dict = {
 
   experience: [
     {
-      period: "2024 — agora",
+      period: "2026 — agora",
       role: "Desenvolvedor Mobile",
       company: "Prepara+",
       summary:
         "Lidero a frente mobile do app, defino padroes de navegacao e coordeno a integracao com o back-end.",
     },
     {
-      period: "2022 — 2024",
-      role: "Desenvolvedor Front-end",
-      company: "Freelance",
+      period: "2023 — 2025",
+      role: "Desenvolvedor Mobile e Front-end",
+      company: "Fabrica de Software",
       summary:
-        "Landing pages, e-commerces e dashboards para pequenos negocios, do design a hospedagem.",
+        "Desenvolvi projetos mobile e front-end para a PMPB (Policia Militar da Paraiba) e o PROCON-PB.",
     },
     {
-      period: "2020 — 2022",
-      role: "Estudante & primeiros projetos",
-      company: "Faculdade / comunidade",
-      summary: "Fundamentos de web, algoritmos e os primeiros apps publicados.",
+      period: "2022 — 2023",
+      role: "Desenvolvedor Front-end",
+      company: "Driveads",
+      summary:
+        "Desenvolvi interfaces e funcionalidades front-end para os produtos web da empresa.",
     },
   ],
 
