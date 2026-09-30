@@ -6,7 +6,7 @@ combinada com fonte mono nos rótulos.
 
 Repositório: https://github.com/hiagoka/site-portfolio
 
-Site publicado: https://site-portfolio-wine.vercel.app
+Site publicado: https://hiagokalil-dev.vercel.app
 
 ## Stack
 
@@ -59,7 +59,7 @@ src/
 
 ## Deploy
 
-Publicado na Vercel (`hiagokas-projects/site-portfolio`), com o
+Publicado na Vercel (`hiagokas-projects/hiagokalil-dev`), com o
 repositório do GitHub conectado: cada push em `main` gera um novo
 deploy automaticamente.
 
