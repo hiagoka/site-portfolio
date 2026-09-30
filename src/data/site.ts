@@ -5,7 +5,7 @@ export const profile = {
   name: "Hiago Kalil",
   available: true,
   photo: foto,
-  email: "hiagokalil@hotmail.com",
+  email: "kalilhiago@gmail.com",
   socials: [
     { label: "GitHub", url: "https://github.com/hiagoka" },
     { label: "LinkedIn", url: "https://linkedin.com/in/hiagoka" },
