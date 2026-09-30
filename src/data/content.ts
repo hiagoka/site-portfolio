@@ -54,7 +54,7 @@ const en = {
     {
       title: "Pulso",
       description:
-        "AI-assisted workout app in React Native/Expo, building the core training logic on top of the project skeleton.",
+        "Native iOS workout app in Swift/SwiftUI with SwiftData for offline-first storage, AI-generated training plans via Supabase Edge Functions, and RevenueCat for subscriptions.",
     },
     {
       title: "iOS readiness auditor",
@@ -142,7 +142,7 @@ const pt: Dict = {
     {
       title: "Pulso",
       description:
-        "App de treino assistido por IA em React Native/Expo, construindo a lógica principal de treino sobre o esqueleto do projeto.",
+        "App de treino nativo em Swift/SwiftUI com SwiftData para armazenamento offline-first, planos de treino gerados por IA via Edge Functions do Supabase, e RevenueCat para assinaturas.",
     },
     {
       title: "Auditor de prontidão iOS",

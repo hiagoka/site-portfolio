@@ -35,7 +35,7 @@ export const projects: Project[] = [
   },
   {
     year: "2026",
-    stack: ["Swift"],
+    stack: ["Swift", "SwiftUI", "Supabase"],
     url: "https://github.com/hiagoka/health-app-pulso",
   },
   {
