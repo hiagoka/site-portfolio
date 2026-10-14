@@ -7,7 +7,7 @@ const en = {
   location: "Brazil",
   role: "Fullstack & Mobile Developer",
   intro:
-    "I build apps and interfaces focused on clarity, performance, and code the next dev can actually read.",
+    "I turn ideas into fast, polished products that hold up in production.",
   about:
     "I've spent 3+ years shipping real products, from public-sector apps to my own side projects. My core is React Native and TypeScript, backed by native iOS in Swift/SwiftUI, Next.js on the web, and Node.js on the back-end. I care about clean architecture, code that scales, and owning a feature from the first decision to the store release. I learn by building, use AI to move faster without lowering the bar, and work comfortably in English.",
   aboutLine: "Based in Brazil. Open to remote work.",
@@ -95,7 +95,7 @@ const pt: Dict = {
   location: "Brasil",
   role: "Desenvolvedor Fullstack & Mobile",
   intro:
-    "Construo aplicativos e interfaces com foco em clareza, performance e um código que o próximo dev entende.",
+    "Transformo ideias em produtos rápidos, bem acabados e que se sustentam em produção.",
   about:
     "Passei mais de 3 anos entregando produtos reais, de apps do setor público a projetos próprios. Meu foco é React Native e TypeScript, apoiado por iOS nativo em Swift/SwiftUI, Next.js na web e Node.js no back-end. Me importo com arquitetura limpa, código que escala e com acompanhar uma funcionalidade da primeira decisão até a publicação na loja. Aprendo construindo, uso IA para ganhar velocidade sem baixar a régua e trabalho com tranquilidade em inglês.",
   aboutLine: "Baseado no Brasil. Aberto a trabalho remoto.",
