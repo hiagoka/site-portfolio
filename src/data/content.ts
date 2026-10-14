@@ -5,11 +5,11 @@ export type Lang = "en" | "pt";
 
 const en = {
   location: "Brazil",
-  role: "Mobile & Web Developer",
+  role: "Fullstack & Mobile Developer",
   intro:
-    "I build apps and interfaces focused on clarity, performance, and code the next dev can actually read. Currently on the mobile side of Prepara+.",
+    "I build apps and interfaces focused on clarity, performance, and code the next dev can actually read.",
   about:
-    "I'm a mobile developer specialized in React Native and TypeScript, with experience in Swift/SwiftUI for native iOS, Next.js on the web front-end, and Node.js on the back-end. I like well-structured apps, with organized, scalable code, and following the product from architecture to delivery. I learn by building, use AI to move faster, and speak advanced English.",
+    "I've spent 3+ years shipping real products, from public-sector apps to my own side projects. My core is React Native and TypeScript, backed by native iOS in Swift/SwiftUI, Next.js on the web, and Node.js on the back-end. I care about clean architecture, code that scales, and owning a feature from the first decision to the store release. I learn by building, use AI to move faster without lowering the bar, and work comfortably in English.",
   aboutLine: "Based in Brazil. Open to remote work.",
 
   nav: {
@@ -93,11 +93,11 @@ export type Dict = typeof en;
 
 const pt: Dict = {
   location: "Brasil",
-  role: "Desenvolvedor Mobile & Web",
+  role: "Desenvolvedor Fullstack & Mobile",
   intro:
-    "Construo aplicativos e interfaces com foco em clareza, performance e um código que o próximo dev entende. Atualmente na frente mobile do Prepara+.",
+    "Construo aplicativos e interfaces com foco em clareza, performance e um código que o próximo dev entende.",
   about:
-    "Sou desenvolvedor mobile especializado em React Native e TypeScript, com experiência em Swift/SwiftUI para iOS nativo, Next.js no front-end web e Node.js no back-end. Gosto de apps bem estruturados, com código organizado e escalável, e de acompanhar o produto da arquitetura até a entrega. Aprendo construindo, uso IA para trabalhar com mais agilidade e tenho inglês avançado.",
+    "Passei mais de 3 anos entregando produtos reais, de apps do setor público a projetos próprios. Meu foco é React Native e TypeScript, apoiado por iOS nativo em Swift/SwiftUI, Next.js na web e Node.js no back-end. Me importo com arquitetura limpa, código que escala e com acompanhar uma funcionalidade da primeira decisão até a publicação na loja. Aprendo construindo, uso IA para ganhar velocidade sem baixar a régua e trabalho com tranquilidade em inglês.",
   aboutLine: "Baseado no Brasil. Aberto a trabalho remoto.",
 
   nav: {
